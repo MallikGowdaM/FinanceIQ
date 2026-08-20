@@ -18,11 +18,11 @@ env/
 ENV/
 
 # Django
-*.sqlite3
-db.sqlite3
-staticfiles/
+# db.sqlite3 will be committed for read-only Vercel demo
+# staticfiles/ will be committed for pre-compiled static assets served by WhiteNoise
 media/
 local_settings.py
+
 
 # Environment variables (keep .env.example, ignore actual .env)
 .env
