@@ -77,9 +77,18 @@ WSGI_APPLICATION = "finance_dashboard.wsgi.application"
 # ─── Database ────────────────────────────────────────────────────────────────
 # Default: SQLite for zero-config local dev.
 # Set DATABASE_URL=postgres://... in .env for PostgreSQL.
-DATABASES = {
-    "default": env.db("DATABASE_URL", default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
-}
+if env("DATABASE_URL", default=""):
+    DATABASES = {
+        "default": env.db("DATABASE_URL")
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
 
 # ─── Password validation ─────────────────────────────────────────────────────
 AUTH_PASSWORD_VALIDATORS = [
