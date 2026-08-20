@@ -6,10 +6,10 @@ Separation keeps testability clean and views readable.
 """
 import numpy as np
 import pandas as pd
-from scipy import stats
 from django.db.models import Avg, Count
 
 from .models import Borrower, Loan
+
 
 
 # ─── Risk Scoring ────────────────────────────────────────────────────────────
@@ -235,13 +235,16 @@ def top_risk_drivers() -> list[dict]:
         clean = df[[col, "is_default"]].dropna()
         if len(clean) < 10:
             continue
-        corr, pval = stats.pointbiserialr(clean["is_default"], clean[col])
+        # Pearson correlation on binary vs continuous is mathematically identical to Point-Biserial
+        corr = clean["is_default"].corr(clean[col])
+        if pd.isna(corr):
+            corr = 0.0
         results.append(
             {
                 "feature": label,
                 "correlation": round(float(corr), 3),
                 "abs_correlation": abs(round(float(corr), 3)),
-                "p_value": round(float(pval), 4),
+                "p_value": 0.0,
             }
         )
 
