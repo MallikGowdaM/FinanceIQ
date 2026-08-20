@@ -1,0 +1,348 @@
+{% extends "base.html" %}
+{% block title %}Loan Default Risk — FinanceIQ{% endblock %}
+{% block nav_loan %}active{% endblock %}
+
+{% block content %}
+
+<!-- ─── Page Header ─────────────────────────────────────────────────────────── -->
+<div class="page-header mb-4">
+  <div class="d-flex align-items-center gap-3">
+    <div class="page-header__icon page-header__icon--risk">
+      <i class="bi bi-shield-exclamation"></i>
+    </div>
+    <div>
+      <h2 class="page-header__title">Loan Default Risk</h2>
+      <p class="page-header__subtitle mb-0">Analyse borrower risk profiles using credit scores, DTI ratios, and income data.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── KPI Summary Panel ───────────────────────────────────────────────────── -->
+<div class="row g-3 mb-4" id="kpi-panel">
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card kpi-card--neutral">
+      <div class="kpi-card__label">Total Loans</div>
+      <div class="kpi-card__value" id="kpi-total">{{ total_loans }}</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card kpi-card--danger">
+      <div class="kpi-card__label">Default Rate</div>
+      <div class="kpi-card__value" id="kpi-default-rate">{{ default_rate }}%</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card kpi-card--neutral">
+      <div class="kpi-card__label">Avg Credit Score</div>
+      <div class="kpi-card__value" id="kpi-credit"></div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card kpi-card--neutral">
+      <div class="kpi-card__label">Avg DTI Ratio</div>
+      <div class="kpi-card__value" id="kpi-dti"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Risk Drivers Panel ──────────────────────────────────────────────────── -->
+<div class="fd-card mb-4" id="risk-drivers-section">
+  <div class="fd-card__header">
+    <h6><i class="bi bi-diagram-3 me-2"></i>Top Risk Drivers</h6>
+    <small class="text-muted">Point-biserial correlation with default status</small>
+  </div>
+  <div class="fd-card__body">
+    <div id="risk-drivers-loading" class="loading-state">
+      <div class="spinner-border spinner-border-sm text-accent me-2"></div>Loading risk drivers...
+    </div>
+    <div id="risk-drivers-list" class="d-none"></div>
+  </div>
+</div>
+
+<!-- ─── Charts Row 1 ────────────────────────────────────────────────────────── -->
+<div class="row g-4 mb-4">
+  <div class="col-lg-8">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-bar-chart me-2"></i>Default Rate by Credit Score Band</h6>
+      </div>
+      <div class="fd-card__body">
+        <div class="chart-wrapper chart-wrapper--md">
+          <canvas id="chart-credit-band"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-pie-chart me-2"></i>Risk Segment Distribution</h6>
+      </div>
+      <div class="fd-card__body d-flex align-items-center justify-content-center">
+        <div class="chart-wrapper chart-wrapper--sm">
+          <canvas id="chart-risk-pie"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Charts Row 2 ────────────────────────────────────────────────────────── -->
+<div class="row g-4 mb-4">
+  <div class="col-lg-6">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-bar-chart-steps me-2"></i>Default Rate by DTI Ratio</h6>
+      </div>
+      <div class="fd-card__body">
+        <div class="chart-wrapper chart-wrapper--md">
+          <canvas id="chart-dti"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-scatter-chart me-2"></i>Income vs Loan Amount</h6>
+        <small class="text-muted">coloured by default status</small>
+      </div>
+      <div class="fd-card__body">
+        <div class="chart-wrapper chart-wrapper--md">
+          <canvas id="chart-scatter"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Filters + Table ─────────────────────────────────────────────────────── -->
+<div class="fd-card mb-4">
+  <div class="fd-card__header">
+    <h6><i class="bi bi-table me-2"></i>Loan Records</h6>
+    <!-- Filters -->
+    <form method="get" class="d-flex gap-2 flex-wrap align-items-center">
+      <select name="risk_segment" class="form-select form-select-sm fd-select" style="width:auto">
+        <option value="">All Risk Segments</option>
+        {% for val, label in risk_choices %}
+        <option value="{{ val }}" {% if active_risk_filter == val %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+      <select name="purpose" class="form-select form-select-sm fd-select" style="width:auto">
+        <option value="">All Purposes</option>
+        {% for val, label in purpose_choices %}
+        <option value="{{ val }}" {% if active_purpose_filter == val %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="btn btn-sm btn-accent">Filter</button>
+      <a href="{% url 'loan_risk:dashboard' %}" class="btn btn-sm btn-outline-secondary">Clear</a>
+    </form>
+  </div>
+  <div class="fd-card__body p-0">
+    <div class="table-responsive">
+      <table class="table fd-table mb-0">
+        <thead>
+          <tr>
+            <th>Loan ID</th><th>Age</th><th>Income</th><th>Credit Score</th>
+            <th>DTI %</th><th>Loan Amount</th><th>Purpose</th><th>Status</th><th>Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for loan in loans %}
+          <tr>
+            <td class="text-muted">#{{ loan.id }}</td>
+            <td>{{ loan.borrower.age }}</td>
+            <td>${{ loan.borrower.income|floatformat:0 }}</td>
+            <td>{{ loan.borrower.credit_score }}</td>
+            <td>{{ loan.borrower.dti_ratio }}%</td>
+            <td>${{ loan.loan_amount|floatformat:0 }}</td>
+            <td><span class="badge bg-secondary">{{ loan.get_purpose_display }}</span></td>
+            <td>
+              <span class="status-badge status-badge--{{ loan.status }}">{{ loan.get_status_display }}</span>
+            </td>
+            <td>
+              <span class="risk-badge risk-badge--{{ loan.risk_segment|lower }}">{{ loan.risk_segment }}</span>
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="9" class="text-center text-muted py-4">No loans match the current filter.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Add Borrower / Instant Risk Form ───────────────────────────────────── -->
+<div class="fd-card mb-4">
+  <div class="fd-card__header">
+    <h6><i class="bi bi-person-plus me-2"></i>Risk Score a New Borrower</h6>
+    <small class="text-muted">Instant risk segment calculation</small>
+  </div>
+  <div class="fd-card__body">
+    <form id="risk-predict-form" class="row g-3">
+      {% csrf_token %}
+      <div class="col-sm-6 col-lg-3">
+        <label class="form-label">Credit Score (300–850)</label>
+        <input type="number" class="form-control" name="credit_score" id="f-credit" min="300" max="850" value="680" required>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <label class="form-label">DTI Ratio (%)</label>
+        <input type="number" class="form-control" name="dti_ratio" id="f-dti" min="0" max="100" step="0.1" value="22.5" required>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <label class="form-label">Annual Income ($)</label>
+        <input type="number" class="form-control" name="income" id="f-income" min="0" value="55000" required>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <label class="form-label">Loan Amount ($)</label>
+        <input type="number" class="form-control" name="loan_amount" id="f-loan" min="0" value="10000" required>
+      </div>
+      <div class="col-12 d-flex align-items-center gap-3">
+        <button type="submit" class="btn btn-accent">
+          <i class="bi bi-lightning me-1"></i>Calculate Risk
+        </button>
+        <div id="risk-result" class="d-none">
+          Risk Segment: <span id="risk-result-value" class="fw-bold ms-1"></span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script>
+const API = {
+  creditBand: "/api/loan-risk/default-by-credit-band/",
+  dti: "/api/loan-risk/default-by-dti/",
+  riskDist: "/api/loan-risk/risk-distribution/",
+  scatter: "/api/loan-risk/scatter/",
+  riskDrivers: "/api/loan-risk/risk-drivers/",
+  predict: "/api/loan-risk/predict/",
+  summary: "/api/loan-risk/summary/",
+};
+
+// ─── Load KPIs ────────────────────────────────────────────────────────────────
+fetch(API.summary)
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById("kpi-credit").textContent = data.avg_credit_score || "—";
+    document.getElementById("kpi-dti").textContent = (data.avg_dti || "—") + "%";
+  });
+
+// ─── Risk Drivers ─────────────────────────────────────────────────────────────
+fetch(API.riskDrivers)
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById("risk-drivers-loading").classList.add("d-none");
+    const el = document.getElementById("risk-drivers-list");
+    el.classList.remove("d-none");
+    if (!data.length) { el.innerHTML = "<em class='text-muted'>Insufficient data.</em>"; return; }
+    el.innerHTML = data.slice(0, 5).map(d => `
+      <div class="driver-row mb-2">
+        <div class="d-flex justify-content-between mb-1">
+          <span class="fw-medium">${d.feature}</span>
+          <span class="text-muted small">r = ${d.correlation.toFixed(3)}</span>
+        </div>
+        <div class="progress" style="height:6px">
+          <div class="progress-bar ${d.correlation < 0 ? 'bg-success' : 'bg-danger'}"
+               style="width:${Math.abs(d.abs_correlation)*100}%"></div>
+        </div>
+      </div>`).join("");
+  });
+
+// ─── Default Rate by Credit Band ─────────────────────────────────────────────
+fetch(API.creditBand)
+  .then(r => r.json())
+  .then(data => {
+    renderBar("chart-credit-band", {
+      labels: data.map(d => d.band),
+      datasets: [{
+        label: "Default Rate (%)",
+        data: data.map(d => d.default_rate),
+        backgroundColor: data.map(d =>
+          d.default_rate > 20 ? "rgba(239,68,68,0.75)" :
+          d.default_rate > 10 ? "rgba(245,158,11,0.75)" : "rgba(16,185,129,0.75)"
+        ),
+        borderRadius: 4,
+      }],
+    }, { yLabel: "Default Rate (%)", tooltipSuffix: "%" });
+  });
+
+// ─── Default Rate by DTI ──────────────────────────────────────────────────────
+fetch(API.dti)
+  .then(r => r.json())
+  .then(data => {
+    renderBar("chart-dti", {
+      labels: data.map(d => d.dti_bucket),
+      datasets: [{
+        label: "Default Rate (%)",
+        data: data.map(d => d.default_rate),
+        backgroundColor: "rgba(139,92,246,0.75)",
+        borderRadius: 4,
+      }],
+    }, { yLabel: "Default Rate (%)", tooltipSuffix: "%" });
+  });
+
+// ─── Risk Distribution Pie ────────────────────────────────────────────────────
+fetch(API.riskDist)
+  .then(r => r.json())
+  .then(data => {
+    renderDoughnut("chart-risk-pie", {
+      labels: data.map(d => d.segment),
+      datasets: [{
+        data: data.map(d => d.count),
+        backgroundColor: ["rgba(16,185,129,0.8)", "rgba(245,158,11,0.8)", "rgba(239,68,68,0.8)"],
+      }],
+    });
+  });
+
+// ─── Income vs Loan Scatter ───────────────────────────────────────────────────
+fetch(API.scatter)
+  .then(r => r.json())
+  .then(data => {
+    const colorMap = { default: "rgba(239,68,68,0.5)", paid: "rgba(16,185,129,0.5)", current: "rgba(59,130,246,0.5)" };
+    const grouped = {};
+    data.forEach(d => {
+      if (!grouped[d.status]) grouped[d.status] = [];
+      grouped[d.status].push({ x: d.income / 1000, y: d.loan_amount / 1000 });
+    });
+    renderScatter("chart-scatter", {
+      datasets: Object.entries(grouped).map(([status, pts]) => ({
+        label: status.charAt(0).toUpperCase() + status.slice(1),
+        data: pts,
+        backgroundColor: colorMap[status] || "rgba(100,116,139,0.4)",
+        pointRadius: 3,
+      })),
+    }, { xLabel: "Annual Income ($k)", yLabel: "Loan Amount ($k)" });
+  });
+
+// ─── Risk Predict Form ────────────────────────────────────────────────────────
+document.getElementById("risk-predict-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const payload = {
+    credit_score: document.getElementById("f-credit").value,
+    dti_ratio: document.getElementById("f-dti").value,
+    income: document.getElementById("f-income").value,
+    loan_amount: document.getElementById("f-loan").value,
+  };
+  fetch(API.predict, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-CSRFToken": getCsrfToken() },
+    body: JSON.stringify(payload),
+  })
+  .then(r => r.json())
+  .then(data => {
+    const el = document.getElementById("risk-result");
+    const val = document.getElementById("risk-result-value");
+    el.classList.remove("d-none");
+    const colors = { Low: "text-success", Medium: "text-warning", High: "text-danger" };
+    val.className = "fw-bold ms-1 " + (colors[data.risk_segment] || "");
+    val.textContent = data.risk_segment;
+  });
+});
+</script>
+{% endblock %}

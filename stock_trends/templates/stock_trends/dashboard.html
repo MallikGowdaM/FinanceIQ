@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+{% block title %}Stock Market Trends — FinanceIQ{% endblock %}
+{% block nav_stock %}active{% endblock %}
+
+{% block content %}
+
+<!-- ─── Page Header ─────────────────────────────────────────────────────────── -->
+<div class="page-header mb-4">
+  <div class="d-flex align-items-center gap-3">
+    <div class="page-header__icon page-header__icon--stock">
+      <i class="bi bi-graph-up-arrow"></i>
+    </div>
+    <div>
+      <h2 class="page-header__title">Stock Market Trends</h2>
+      <p class="page-header__subtitle mb-0">Compare normalised prices, volatility, moving averages, and return-risk profiles across tickers.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Controls Bar ────────────────────────────────────────────────────────── -->
+<div class="fd-card mb-4">
+  <div class="fd-card__body py-3">
+    <div class="row g-3 align-items-end">
+      <!-- Ticker pills multi-select -->
+      <div class="col-lg-8">
+        <label class="form-label fw-medium mb-2">Select Tickers</label>
+        <div id="ticker-pills" class="d-flex flex-wrap gap-2">
+          {% for ticker in tickers %}
+          <button type="button"
+                  class="btn btn-sm ticker-pill {% if ticker in default_tickers %}ticker-pill--active{% endif %}"
+                  data-ticker="{{ ticker }}"
+                  onclick="toggleTicker(this)">{{ ticker }}</button>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- Date range -->
+      <div class="col-lg-4">
+        <label class="form-label fw-medium mb-2">Date Range</label>
+        <div class="btn-group w-100" id="date-range-group" role="group">
+          <button type="button" class="btn btn-sm btn-outline-accent range-btn" data-range="6M" onclick="selectRange(this)">6M</button>
+          <button type="button" class="btn btn-sm btn-outline-accent range-btn active" data-range="1Y" onclick="selectRange(this)">1Y</button>
+          <button type="button" class="btn btn-sm btn-outline-accent range-btn" data-range="3Y" onclick="selectRange(this)">3Y</button>
+          <button type="button" class="btn btn-sm btn-outline-accent range-btn" data-range="ALL" onclick="selectRange(this)">ALL</button>
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-accent" onclick="loadAllCharts()">
+          <i class="bi bi-arrow-clockwise me-1"></i>Update Charts
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Row 1: Normalized Prices + Volatility ────────────────────────────────── -->
+<div class="row g-4 mb-4">
+  <div class="col-lg-7">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-graph-up me-2"></i>Normalised Price (Base 100)</h6>
+        <small class="text-muted">Equal starting point for fair comparison</small>
+      </div>
+      <div class="fd-card__body">
+        <div class="chart-wrapper chart-wrapper--lg">
+          <canvas id="chart-normalized"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-activity me-2"></i>Rolling Volatility (20-day, Annualised)</h6>
+      </div>
+      <div class="fd-card__body">
+        <div class="chart-wrapper chart-wrapper--lg">
+          <canvas id="chart-volatility"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Row 2: MA Crossover + Risk-Return Scatter ──────────────────────────── -->
+<div class="row g-4 mb-4">
+  <div class="col-lg-7">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-bezier2 me-2"></i>Moving Average Crossover</h6>
+        <small class="text-muted">
+          Ticker:
+          <select id="ma-ticker-select" class="form-select form-select-sm d-inline-block ms-1" style="width:auto"
+                  onchange="loadMACrossover()">
+            {% for ticker in tickers %}<option value="{{ ticker }}">{{ ticker }}</option>{% endfor %}
+          </select>
+        </small>
+      </div>
+      <div class="fd-card__body">
+        <div class="chart-wrapper chart-wrapper--lg">
+          <canvas id="chart-ma"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-scatter-chart me-2"></i>Risk-Return Scatter</h6>
+        <small class="text-muted">Annualised return vs volatility</small>
+      </div>
+      <div class="fd-card__body d-flex align-items-center">
+        <div class="chart-wrapper chart-wrapper--lg">
+          <canvas id="chart-riskreturn"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Correlation Heatmap ─────────────────────────────────────────────────── -->
+<div class="fd-card mb-4">
+  <div class="fd-card__header">
+    <h6><i class="bi bi-grid me-2"></i>Correlation Heatmap (Daily Returns)</h6>
+    <small class="text-muted">Pearson correlation of daily returns — removes trend bias</small>
+  </div>
+  <div class="fd-card__body">
+    <div id="corr-heatmap-container" class="corr-heatmap-container"></div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let selectedTickers = {{ default_tickers|safe }};
+let selectedRange = "1Y";
+let chartInstances = {};
+
+function toggleTicker(btn) {
+  const ticker = btn.dataset.ticker;
+  if (selectedTickers.includes(ticker)) {
+    if (selectedTickers.length <= 1) return; // keep at least 1
+    selectedTickers = selectedTickers.filter(t => t !== ticker);
+    btn.classList.remove("ticker-pill--active");
+  } else {
+    selectedTickers.push(ticker);
+    btn.classList.add("ticker-pill--active");
+  }
+}
+
+function selectRange(btn) {
+  document.querySelectorAll(".range-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  selectedRange = btn.dataset.range;
+}
+
+function loadAllCharts() {
+  loadNormalizedPrices();
+  loadVolatility();
+  loadMACrossover();
+  loadRiskReturn();
+  loadCorrelation();
+}
+
+// ─── Normalized Prices ────────────────────────────────────────────────────────
+function loadNormalizedPrices() {
+  const url = `/api/stock-trends/normalized-prices/?tickers=${selectedTickers.join(",")}&range=${selectedRange}`;
+  fetch(url).then(r => r.json()).then(data => {
+    const colors = getTickerColors(data.series.map(s => s.ticker));
+    destroyChart("chart-normalized");
+    chartInstances["chart-normalized"] = renderLineChart("chart-normalized", {
+      labels: data.dates,
+      datasets: data.series.map((s, i) => ({
+        label: s.ticker,
+        data: s.data,
+        borderColor: colors[i],
+        backgroundColor: "transparent",
+        borderWidth: 2,
+        pointRadius: 0,
+        tension: 0.1,
+      })),
+    }, { yLabel: "Normalised Price (Base 100)" });
+  });
+}
+
+// ─── Rolling Volatility ───────────────────────────────────────────────────────
+function loadVolatility() {
+  const url = `/api/stock-trends/volatility/?tickers=${selectedTickers.join(",")}&range=${selectedRange}`;
+  fetch(url).then(r => r.json()).then(data => {
+    const colors = getTickerColors(data.series.map(s => s.ticker));
+    destroyChart("chart-volatility");
+    chartInstances["chart-volatility"] = renderLineChart("chart-volatility", {
+      labels: data.dates,
+      datasets: data.series.map((s, i) => ({
+        label: s.ticker,
+        data: s.data,
+        borderColor: colors[i],
+        backgroundColor: "transparent",
+        borderWidth: 2,
+        pointRadius: 0,
+        tension: 0.2,
+      })),
+    }, { yLabel: "Volatility % (Annualised)" });
+  });
+}
+
+// ─── MA Crossover ─────────────────────────────────────────────────────────────
+function loadMACrossover() {
+  const ticker = document.getElementById("ma-ticker-select").value;
+  const url = `/api/stock-trends/moving-averages/?tickers=${ticker}&range=${selectedRange}`;
+  fetch(url).then(r => r.json()).then(data => {
+    const d = data[ticker];
+    if (!d) return;
+    destroyChart("chart-ma");
+    chartInstances["chart-ma"] = renderLineChart("chart-ma", {
+      labels: d.dates,
+      datasets: [
+        { label: "Close", data: d.close, borderColor: "rgba(148,163,184,0.7)", borderWidth: 1, pointRadius: 0, tension: 0.1 },
+        { label: "MA 20", data: d.MA20, borderColor: "#6366f1", borderWidth: 2, pointRadius: 0, tension: 0.2 },
+        { label: "MA 50", data: d.MA50, borderColor: "#f59e0b", borderWidth: 2, pointRadius: 0, tension: 0.2 },
+        { label: "MA 200", data: d.MA200, borderColor: "#ef4444", borderWidth: 2, pointRadius: 0, tension: 0.2 },
+      ],
+    }, { yLabel: `${ticker} Price ($)` });
+  });
+}
+
+// ─── Risk-Return Scatter ──────────────────────────────────────────────────────
+function loadRiskReturn() {
+  const url = `/api/stock-trends/risk-return/?range=${selectedRange}`;
+  fetch(url).then(r => r.json()).then(data => {
+    destroyChart("chart-riskreturn");
+    const colors = getTickerColors(data.map(d => d.ticker));
+    chartInstances["chart-riskreturn"] = renderScatter("chart-riskreturn", {
+      datasets: data.map((d, i) => ({
+        label: d.ticker,
+        data: [{ x: d.annualized_volatility, y: d.annualized_return }],
+        backgroundColor: colors[i],
+        pointRadius: 8,
+        pointHoverRadius: 10,
+      })),
+    }, { xLabel: "Volatility % (Annualised)", yLabel: "Return % (Annualised)" });
+  });
+}
+
+// ─── Correlation Heatmap ──────────────────────────────────────────────────────
+function loadCorrelation() {
+  const url = `/api/stock-trends/correlation/?tickers=${selectedTickers.join(",")}&range=${selectedRange}`;
+  fetch(url).then(r => r.json()).then(data => {
+    renderHeatmap("corr-heatmap-container", data.labels, data.matrix);
+  });
+}
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+loadAllCharts();
+</script>
+{% endblock %}

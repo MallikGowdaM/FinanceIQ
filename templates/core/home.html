@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}FinanceIQ — Analytics Dashboard{% endblock %}
+{% block nav_home %}active{% endblock %}
+
+{% block content %}
+
+<!-- ─── Hero Section ────────────────────────────────────────────────────────── -->
+<div class="hero-section mb-5">
+  <div class="row align-items-center">
+    <div class="col-lg-8">
+      <h1 class="hero-title">Finance Analytics <span class="text-accent">Dashboard</span></h1>
+      <p class="hero-subtitle">
+        A unified platform for loan default risk analysis, stock market trend exploration, and personal finance tracking.
+        Built with Django, pandas, and Chart.js.
+      </p>
+    </div>
+    <div class="col-lg-4 text-lg-end">
+      <div class="badge-stack">
+        <span class="tech-badge">Django 5</span>
+        <span class="tech-badge">pandas</span>
+        <span class="tech-badge">Chart.js</span>
+        <span class="tech-badge">scikit-learn</span>
+        <span class="tech-badge">DRF</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Top KPI Bar ─────────────────────────────────────────────────────────── -->
+<div class="row g-3 mb-5">
+  <div class="col-6 col-md-3">
+    <div class="kpi-mini">
+      <i class="bi bi-file-earmark-text text-warning"></i>
+      <div class="kpi-mini-value">{{ total_loans|default:"—" }}</div>
+      <div class="kpi-mini-label">Loans Analysed</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="kpi-mini">
+      <i class="bi bi-exclamation-triangle text-danger"></i>
+      <div class="kpi-mini-value">{{ default_rate|default:"—" }}%</div>
+      <div class="kpi-mini-label">Default Rate</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="kpi-mini">
+      <i class="bi bi-graph-up text-success"></i>
+      <div class="kpi-mini-value">{{ total_stocks|default:"—" }}</div>
+      <div class="kpi-mini-label">Stocks Tracked</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="kpi-mini">
+      <i class="bi bi-credit-card text-info"></i>
+      <div class="kpi-mini-value">{{ total_transactions|default:"—" }}</div>
+      <div class="kpi-mini-label">Transactions</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Module Cards ────────────────────────────────────────────────────────── -->
+<h4 class="section-heading mb-4">Analytics Modules</h4>
+<div class="row g-4">
+
+  <!-- Loan Risk Card -->
+  <div class="col-md-4">
+    <a href="{% url 'loan_risk:dashboard' %}" class="module-card-link">
+      <div class="module-card module-card--risk h-100">
+        <div class="module-card__icon">
+          <i class="bi bi-shield-exclamation"></i>
+        </div>
+        <h5 class="module-card__title">Loan Default Risk</h5>
+        <p class="module-card__desc">
+          Analyse {{ total_borrowers }} borrowers across risk segments. Explore how credit score,
+          DTI ratio, and income predict default probability.
+        </p>
+        <ul class="module-card__features">
+          <li><i class="bi bi-check2"></i> Default rate by credit band</li>
+          <li><i class="bi bi-check2"></i> Risk segment distribution</li>
+          <li><i class="bi bi-check2"></i> Statistical risk drivers</li>
+          <li><i class="bi bi-check2"></i> Instant risk scoring form</li>
+        </ul>
+        <div class="module-card__cta">
+          Explore Loan Risk <i class="bi bi-arrow-right"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Stock Trends Card -->
+  <div class="col-md-4">
+    <a href="{% url 'stock_trends:dashboard' %}" class="module-card-link">
+      <div class="module-card module-card--stock h-100">
+        <div class="module-card__icon">
+          <i class="bi bi-graph-up-arrow"></i>
+        </div>
+        <h5 class="module-card__title">Stock Market Trends</h5>
+        <p class="module-card__desc">
+          Compare {{ total_stocks }} tickers across price trends, rolling volatility,
+          moving average crossovers, and return-risk profiles.
+        </p>
+        <ul class="module-card__features">
+          <li><i class="bi bi-check2"></i> Normalised price comparison</li>
+          <li><i class="bi bi-check2"></i> Rolling volatility (20d)</li>
+          <li><i class="bi bi-check2"></i> MA crossover signals</li>
+          <li><i class="bi bi-check2"></i> Correlation heatmap</li>
+        </ul>
+        <div class="module-card__cta">
+          Explore Stock Trends <i class="bi bi-arrow-right"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Spending Card -->
+  <div class="col-md-4">
+    <a href="{% url 'spending:dashboard' %}" class="module-card-link">
+      <div class="module-card module-card--spending h-100">
+        <div class="module-card__icon">
+          <i class="bi bi-wallet2"></i>
+        </div>
+        <h5 class="module-card__title">Personal Finance</h5>
+        <p class="module-card__desc">
+          Track {{ total_transactions }} transactions across income, expenses, and budgets.
+          Spot spending leaks and monitor your savings rate.
+        </p>
+        <ul class="module-card__features">
+          <li><i class="bi bi-check2"></i> Budget vs actual</li>
+          <li><i class="bi bi-check2"></i> Income & expense trend</li>
+          <li><i class="bi bi-check2"></i> Savings rate KPI</li>
+          <li><i class="bi bi-check2"></i> Spending leak detection</li>
+        </ul>
+        <div class="module-card__cta">
+          Explore Spending <i class="bi bi-arrow-right"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+<!-- ─── Footer Note ─────────────────────────────────────────────────────────── -->
+<div class="text-center mt-5 text-muted small">
+  <i class="bi bi-info-circle me-1"></i>
+  All data is synthetic and for portfolio demonstration purposes only.
+  This is not financial or investment advice.
+</div>
+
+{% endblock %}

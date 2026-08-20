@@ -1,0 +1,363 @@
+{% extends "base.html" %}
+{% block title %}Personal Finance — FinanceIQ{% endblock %}
+{% block nav_spending %}active{% endblock %}
+
+{% block content %}
+
+<!-- ─── Page Header ─────────────────────────────────────────────────────────── -->
+<div class="page-header mb-4">
+  <div class="d-flex align-items-center gap-3">
+    <div class="page-header__icon page-header__icon--spending">
+      <i class="bi bi-wallet2"></i>
+    </div>
+    <div>
+      <h2 class="page-header__title">Personal Finance</h2>
+      <p class="page-header__subtitle mb-0">Track income, expenses, budget vs actual, and detect spending leaks month by month.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Month Selector ──────────────────────────────────────────────────────── -->
+<div class="fd-card mb-4">
+  <div class="fd-card__body py-3">
+    <div class="d-flex flex-wrap align-items-center gap-3">
+      <label class="form-label mb-0 fw-medium">Select Month:</label>
+      <input type="month" id="month-picker" class="form-control" style="width:auto"
+             value="{{ selected_month }}" onchange="handleMonthChange(this.value)">
+      <div id="available-months-hint" class="text-muted small"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── KPI Cards ───────────────────────────────────────────────────────────── -->
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card kpi-card--success">
+      <div class="kpi-card__label">Total Income</div>
+      <div class="kpi-card__value" id="kpi-income">—</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card kpi-card--danger">
+      <div class="kpi-card__label">Total Expenses</div>
+      <div class="kpi-card__value" id="kpi-expense">—</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card kpi-card--neutral">
+      <div class="kpi-card__label">Net Savings</div>
+      <div class="kpi-card__value" id="kpi-net">—</div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card kpi-card--accent">
+      <div class="kpi-card__label">Savings Rate</div>
+      <div class="kpi-card__value" id="kpi-savings-rate">—</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Biggest Overspend Alert ─────────────────────────────────────────────── -->
+<div id="overspend-alert" class="alert alert-warning d-none mb-4">
+  <i class="bi bi-exclamation-triangle-fill me-2"></i>
+  <strong>Biggest Overspend:</strong> <span id="overspend-text"></span>
+</div>
+
+<!-- ─── Charts Row 1 ────────────────────────────────────────────────────────── -->
+<div class="row g-4 mb-4">
+  <div class="col-lg-8">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-graph-up me-2"></i>Income vs Expense Trend (12 Months)</h6>
+      </div>
+      <div class="fd-card__body">
+        <div class="chart-wrapper chart-wrapper--md">
+          <canvas id="chart-trend"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-pie-chart me-2"></i>Spend by Category</h6>
+      </div>
+      <div class="fd-card__body d-flex align-items-center justify-content-center">
+        <div class="chart-wrapper chart-wrapper--sm">
+          <canvas id="chart-category-pie"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Charts Row 2 ────────────────────────────────────────────────────────── -->
+<div class="row g-4 mb-4">
+  <div class="col-lg-7">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-bar-chart-steps me-2"></i>Budget vs Actual</h6>
+        <small class="text-muted">Green = under budget &bull; Red = over budget</small>
+      </div>
+      <div class="fd-card__body">
+        <div class="chart-wrapper chart-wrapper--md">
+          <canvas id="chart-budget"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div class="fd-card h-100">
+      <div class="fd-card__header">
+        <h6><i class="bi bi-droplet me-2"></i>Spending Leaks</h6>
+        <small class="text-muted">Small recurring transactions adding up</small>
+      </div>
+      <div class="fd-card__body">
+        <div id="leaks-loading" class="loading-state">
+          <div class="spinner-border spinner-border-sm text-accent me-2"></div>Loading...
+        </div>
+        <table class="table fd-table d-none" id="leaks-table">
+          <thead><tr><th>Description</th><th>Count</th><th>Total</th></tr></thead>
+          <tbody id="leaks-body"></tbody>
+        </table>
+        <div id="leaks-empty" class="d-none text-muted text-center py-3">No spending leaks detected this month.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Add Transaction Form ────────────────────────────────────────────────── -->
+<div class="fd-card mb-4">
+  <div class="fd-card__header">
+    <h6><i class="bi bi-plus-circle me-2"></i>Add Transaction</h6>
+  </div>
+  <div class="fd-card__body">
+    <form id="add-transaction-form" class="row g-3">
+      {% csrf_token %}
+      <div class="col-sm-6 col-lg-2">
+        <label class="form-label">Date</label>
+        <input type="date" class="form-control" name="date" id="tx-date" value="{{ selected_month }}-01" required>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" name="description" id="tx-desc" placeholder="e.g. Grocery Store" required>
+      </div>
+      <div class="col-sm-4 col-lg-1">
+        <label class="form-label">Amount ($)</label>
+        <input type="number" class="form-control" name="amount" id="tx-amount" step="0.01" min="0.01" required>
+      </div>
+      <div class="col-sm-4 col-lg-2">
+        <label class="form-label">Category</label>
+        <select class="form-select" name="category_name" id="tx-category" required>
+          {% for cat in categories %}<option value="{{ cat }}">{{ cat }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="col-sm-4 col-lg-1">
+        <label class="form-label">Type</label>
+        <select class="form-select" name="type" id="tx-type">
+          {% for val, label in type_choices %}<option value="{{ val }}">{{ label }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="col-sm-6 col-lg-1">
+        <label class="form-label">Method</label>
+        <select class="form-select" name="payment_method" id="tx-method">
+          {% for val, label in payment_method_choices %}<option value="{{ val }}">{{ label }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-accent">
+          <i class="bi bi-plus me-1"></i>Add & Refresh
+        </button>
+        <span id="tx-result" class="ms-3 text-success d-none"><i class="bi bi-check2-circle me-1"></i>Transaction added!</span>
+        <span id="tx-error" class="ms-3 text-danger d-none"></span>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let currentMonth = "{{ selected_month }}";
+
+function handleMonthChange(month) {
+  currentMonth = month;
+  loadKPIs();
+  loadCategoryBreakdown();
+  loadBudgetVsActual();
+  loadSpendingLeaks();
+}
+
+// ─── KPIs ─────────────────────────────────────────────────────────────────────
+function loadKPIs() {
+  fetch(`/api/spending/kpis/?month=${currentMonth}`)
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById("kpi-income").textContent = "$" + data.total_income.toLocaleString();
+      document.getElementById("kpi-expense").textContent = "$" + data.total_expense.toLocaleString();
+      const net = data.net;
+      const netEl = document.getElementById("kpi-net");
+      netEl.textContent = (net >= 0 ? "+" : "") + "$" + Math.abs(net).toLocaleString();
+      netEl.style.color = net >= 0 ? "var(--color-success)" : "var(--color-danger)";
+      document.getElementById("kpi-savings-rate").textContent = data.savings_rate + "%";
+
+      // Overspend alert
+      if (data.biggest_overspend) {
+        const o = data.biggest_overspend;
+        document.getElementById("overspend-text").textContent =
+          `${o.category} — $${o.actual.toLocaleString()} spent vs $${o.budget.toLocaleString()} budget ($${o.variance.toLocaleString()} over)`;
+        document.getElementById("overspend-alert").classList.remove("d-none");
+      } else {
+        document.getElementById("overspend-alert").classList.add("d-none");
+      }
+    });
+}
+
+// ─── Income-Expense Trend (always 12m) ───────────────────────────────────────
+function loadTrend() {
+  fetch("/api/spending/income-expense-trend/?months=12")
+    .then(r => r.json())
+    .then(data => {
+      renderBar("chart-trend", {
+        labels: data.map(d => d.month),
+        datasets: [
+          {
+            label: "Income",
+            data: data.map(d => d.income),
+            backgroundColor: "rgba(16,185,129,0.75)",
+            borderRadius: 4,
+          },
+          {
+            label: "Expenses",
+            data: data.map(d => d.expense),
+            backgroundColor: "rgba(239,68,68,0.75)",
+            borderRadius: 4,
+          },
+        ],
+      }, { yLabel: "Amount ($)" });
+    });
+}
+
+// ─── Category Breakdown Pie ───────────────────────────────────────────────────
+function loadCategoryBreakdown() {
+  fetch(`/api/spending/category-breakdown/?month=${currentMonth}`)
+    .then(r => r.json())
+    .then(data => {
+      const catColors = [
+        "#6366f1","#f59e0b","#10b981","#ef4444","#8b5cf6","#06b6d4","#ec4899","#84cc16"
+      ];
+      renderDoughnut("chart-category-pie", {
+        labels: data.map(d => d.category),
+        datasets: [{
+          data: data.map(d => d.amount),
+          backgroundColor: catColors,
+        }],
+      });
+    });
+}
+
+// ─── Budget vs Actual (Horizontal Diverging Bar) ──────────────────────────────
+function loadBudgetVsActual() {
+  fetch(`/api/spending/budget-vs-actual/?month=${currentMonth}`)
+    .then(r => r.json())
+    .then(data => {
+      // Filter out income categories and zero-budget rows
+      const filtered = data.filter(d => d.budget > 0);
+      renderHorizontalBar("chart-budget", {
+        labels: filtered.map(d => d.category),
+        datasets: [
+          {
+            label: "Budget",
+            data: filtered.map(d => d.budget),
+            backgroundColor: "rgba(148,163,184,0.4)",
+            borderRadius: 3,
+          },
+          {
+            label: "Actual",
+            data: filtered.map(d => d.actual),
+            backgroundColor: filtered.map(d =>
+              d.variance > 0 ? "rgba(239,68,68,0.75)" : "rgba(16,185,129,0.75)"
+            ),
+            borderRadius: 3,
+          },
+        ],
+      }, { xLabel: "Amount ($)" });
+    });
+}
+
+// ─── Spending Leaks Table ──────────────────────────────────────────────────────
+function loadSpendingLeaks() {
+  document.getElementById("leaks-loading").classList.remove("d-none");
+  document.getElementById("leaks-table").classList.add("d-none");
+  document.getElementById("leaks-empty").classList.add("d-none");
+  fetch(`/api/spending/spending-leaks/?month=${currentMonth}`)
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById("leaks-loading").classList.add("d-none");
+      if (!data.length) {
+        document.getElementById("leaks-empty").classList.remove("d-none");
+        return;
+      }
+      const tbody = document.getElementById("leaks-body");
+      tbody.innerHTML = data.map(d => `
+        <tr>
+          <td>${d.description}</td>
+          <td class="text-muted">${d.count}x</td>
+          <td class="fw-medium text-danger">$${d.total.toFixed(2)}</td>
+        </tr>`).join("");
+      document.getElementById("leaks-table").classList.remove("d-none");
+    });
+}
+
+// ─── Add Transaction Form ──────────────────────────────────────────────────────
+document.getElementById("add-transaction-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const payload = {
+    date: document.getElementById("tx-date").value,
+    description: document.getElementById("tx-desc").value,
+    amount: document.getElementById("tx-amount").value,
+    category_name: document.getElementById("tx-category").value,
+    type: document.getElementById("tx-type").value,
+    payment_method: document.getElementById("tx-method").value,
+  };
+  fetch("/api/spending/transactions/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-CSRFToken": getCsrfToken() },
+    body: JSON.stringify(payload),
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.error) {
+      document.getElementById("tx-error").textContent = data.error;
+      document.getElementById("tx-error").classList.remove("d-none");
+      document.getElementById("tx-result").classList.add("d-none");
+    } else {
+      document.getElementById("tx-result").classList.remove("d-none");
+      document.getElementById("tx-error").classList.add("d-none");
+      e.target.reset();
+      // Refresh all charts for the current month
+      handleMonthChange(currentMonth);
+      setTimeout(() => document.getElementById("tx-result").classList.add("d-none"), 3000);
+    }
+  });
+});
+
+// ─── Available Months Hint ─────────────────────────────────────────────────────
+fetch("/api/spending/available-months/")
+  .then(r => r.json())
+  .then(months => {
+    if (months.length) {
+      document.getElementById("available-months-hint").textContent =
+        `Data available: ${months[0]} to ${months[months.length-1]}`;
+    }
+  });
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+loadKPIs();
+loadTrend();
+loadCategoryBreakdown();
+loadBudgetVsActual();
+loadSpendingLeaks();
+</script>
+{% endblock %}

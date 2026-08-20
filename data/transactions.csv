@@ -1,0 +1,1186 @@
+id,date,description,amount,category_name,type,payment_method
+1,2024-08-01,Monthly Salary,4784.85,Income,income,bank_transfer
+2,2024-08-19,Rent Payment,1552.75,Housing,expense,upi
+3,2024-08-13,Grocery Store,94.92,Food & Dining,expense,credit_card
+4,2024-08-24,Grocery Store,106.81,Food & Dining,expense,debit_card
+5,2024-08-08,Restaurant,33.0,Food & Dining,expense,upi
+6,2024-08-01,Restaurant,26.24,Food & Dining,expense,credit_card
+7,2024-08-01,Restaurant,66.23,Food & Dining,expense,credit_card
+8,2024-08-23,Restaurant,56.42,Food & Dining,expense,credit_card
+9,2024-08-02,Coffee Shop,7.31,Food & Dining,expense,credit_card
+10,2024-08-26,Coffee Shop,10.39,Food & Dining,expense,debit_card
+11,2024-08-21,Coffee Shop,6.7,Food & Dining,expense,debit_card
+12,2024-08-28,Coffee Shop,5.12,Food & Dining,expense,bank_transfer
+13,2024-08-24,Coffee Shop,10.82,Food & Dining,expense,debit_card
+14,2024-08-12,Food Delivery,29.43,Food & Dining,expense,debit_card
+15,2024-08-02,Food Delivery,27.0,Food & Dining,expense,upi
+16,2024-08-18,Food Delivery,39.93,Food & Dining,expense,credit_card
+17,2024-08-22,Food Delivery,33.86,Food & Dining,expense,credit_card
+18,2024-08-14,Bakery,14.45,Food & Dining,expense,credit_card
+19,2024-08-18,Bakery,14.58,Food & Dining,expense,debit_card
+20,2024-08-13,Bakery,12.09,Food & Dining,expense,debit_card
+21,2024-08-07,Bakery,12.72,Food & Dining,expense,debit_card
+22,2024-08-07,Fuel / Petrol,48.57,Transport,expense,cash
+23,2024-08-04,Uber / Lyft,12.78,Transport,expense,credit_card
+24,2024-08-15,Uber / Lyft,21.51,Transport,expense,debit_card
+25,2024-08-15,Metro / Bus Pass,38.09,Transport,expense,debit_card
+26,2024-08-11,Car Maintenance,110.07,Transport,expense,debit_card
+27,2024-08-22,Car Maintenance,316.29,Transport,expense,bank_transfer
+28,2024-08-11,Parking,5.87,Transport,expense,credit_card
+29,2024-08-05,Parking,8.5,Transport,expense,debit_card
+30,2024-08-11,Netflix,15.63,Entertainment,expense,upi
+31,2024-08-23,Spotify,9.82,Entertainment,expense,debit_card
+32,2024-08-20,Cinema Tickets,43.4,Entertainment,expense,upi
+33,2024-08-18,Cinema Tickets,22.01,Entertainment,expense,credit_card
+34,2024-08-02,Gaming / Steam,49.82,Entertainment,expense,credit_card
+35,2024-08-16,Concert / Events,142.89,Entertainment,expense,debit_card
+36,2024-08-06,Gym Membership,62.05,Health & Fitness,expense,credit_card
+37,2024-08-23,Pharmacy,35.81,Health & Fitness,expense,debit_card
+38,2024-08-08,Doctor Visit,59.63,Health & Fitness,expense,credit_card
+39,2024-08-10,Health Insurance,121.8,Health & Fitness,expense,credit_card
+40,2024-08-13,Amazon Purchase,120.66,Shopping,expense,credit_card
+41,2024-08-01,Amazon Purchase,75.02,Shopping,expense,credit_card
+42,2024-08-01,Clothing Store,154.39,Shopping,expense,debit_card
+43,2024-08-19,Clothing Store,45.99,Shopping,expense,bank_transfer
+44,2024-08-23,Electronics,131.71,Shopping,expense,credit_card
+45,2024-08-14,Electronics,201.08,Shopping,expense,bank_transfer
+46,2024-08-11,Home Goods,57.49,Shopping,expense,credit_card
+47,2024-08-20,Books / Stationery,22.28,Shopping,expense,upi
+48,2024-08-05,Electricity Bill,75.02,Utilities,expense,credit_card
+49,2024-08-23,Internet Bill,64.68,Utilities,expense,upi
+50,2024-08-01,Water Bill,24.18,Utilities,expense,debit_card
+51,2024-08-17,Mobile Phone Bill,37.69,Utilities,expense,debit_card
+52,2024-09-01,Monthly Salary,4492.96,Income,income,bank_transfer
+53,2024-09-20,Rent Payment,1460.46,Housing,expense,bank_transfer
+54,2024-09-24,Grocery Store,86.15,Food & Dining,expense,debit_card
+55,2024-09-27,Restaurant,50.98,Food & Dining,expense,debit_card
+56,2024-09-02,Restaurant,22.66,Food & Dining,expense,debit_card
+57,2024-09-14,Restaurant,56.13,Food & Dining,expense,credit_card
+58,2024-09-13,Restaurant,53.63,Food & Dining,expense,bank_transfer
+59,2024-09-11,Restaurant,73.47,Food & Dining,expense,debit_card
+60,2024-09-21,Coffee Shop,6.34,Food & Dining,expense,upi
+61,2024-09-07,Food Delivery,42.31,Food & Dining,expense,cash
+62,2024-09-03,Food Delivery,43.95,Food & Dining,expense,bank_transfer
+63,2024-09-11,Food Delivery,45.59,Food & Dining,expense,credit_card
+64,2024-09-27,Food Delivery,56.38,Food & Dining,expense,debit_card
+65,2024-09-15,Bakery,11.28,Food & Dining,expense,bank_transfer
+66,2024-09-01,Fuel / Petrol,52.38,Transport,expense,upi
+67,2024-09-22,Fuel / Petrol,46.0,Transport,expense,cash
+68,2024-09-25,Uber / Lyft,17.08,Transport,expense,bank_transfer
+69,2024-09-20,Metro / Bus Pass,53.36,Transport,expense,upi
+70,2024-09-09,Car Maintenance,96.56,Transport,expense,bank_transfer
+71,2024-09-01,Car Maintenance,305.54,Transport,expense,credit_card
+72,2024-09-23,Parking,11.98,Transport,expense,upi
+73,2024-09-18,Parking,8.31,Transport,expense,debit_card
+74,2024-09-28,Netflix,15.12,Entertainment,expense,credit_card
+75,2024-09-15,Spotify,10.79,Entertainment,expense,bank_transfer
+76,2024-09-16,Cinema Tickets,36.5,Entertainment,expense,credit_card
+77,2024-09-21,Cinema Tickets,37.64,Entertainment,expense,credit_card
+78,2024-09-07,Gaming / Steam,49.47,Entertainment,expense,upi
+79,2024-09-04,Gaming / Steam,17.85,Entertainment,expense,bank_transfer
+80,2024-09-16,Concert / Events,95.84,Entertainment,expense,upi
+81,2024-09-15,Concert / Events,128.51,Entertainment,expense,credit_card
+82,2024-09-07,Gym Membership,48.13,Health & Fitness,expense,bank_transfer
+83,2024-09-17,Pharmacy,45.35,Health & Fitness,expense,cash
+84,2024-09-07,Doctor Visit,124.91,Health & Fitness,expense,credit_card
+85,2024-09-16,Health Insurance,161.46,Health & Fitness,expense,upi
+86,2024-09-06,Amazon Purchase,29.95,Shopping,expense,debit_card
+87,2024-09-28,Amazon Purchase,81.49,Shopping,expense,upi
+88,2024-09-02,Clothing Store,134.91,Shopping,expense,upi
+89,2024-09-02,Electronics,96.1,Shopping,expense,debit_card
+90,2024-09-15,Home Goods,24.61,Shopping,expense,credit_card
+91,2024-09-21,Books / Stationery,30.56,Shopping,expense,cash
+92,2024-09-06,Books / Stationery,20.13,Shopping,expense,bank_transfer
+93,2024-09-17,Electricity Bill,58.62,Utilities,expense,debit_card
+94,2024-09-05,Internet Bill,61.07,Utilities,expense,debit_card
+95,2024-09-22,Water Bill,37.37,Utilities,expense,bank_transfer
+96,2024-09-11,Mobile Phone Bill,31.5,Utilities,expense,debit_card
+97,2024-10-01,Monthly Salary,4599.38,Income,income,bank_transfer
+98,2024-10-02,Rent Payment,1484.95,Housing,expense,bank_transfer
+99,2024-10-24,Grocery Store,87.05,Food & Dining,expense,bank_transfer
+100,2024-10-14,Grocery Store,91.01,Food & Dining,expense,bank_transfer
+101,2024-10-24,Restaurant,69.15,Food & Dining,expense,credit_card
+102,2024-10-14,Restaurant,47.18,Food & Dining,expense,bank_transfer
+103,2024-10-26,Restaurant,79.94,Food & Dining,expense,bank_transfer
+104,2024-10-20,Coffee Shop,6.29,Food & Dining,expense,bank_transfer
+105,2024-10-11,Food Delivery,29.75,Food & Dining,expense,debit_card
+106,2024-10-22,Food Delivery,40.35,Food & Dining,expense,credit_card
+107,2024-10-03,Bakery,16.06,Food & Dining,expense,credit_card
+108,2024-10-05,Bakery,17.92,Food & Dining,expense,bank_transfer
+109,2024-10-01,Bakery,16.28,Food & Dining,expense,credit_card
+110,2024-10-22,Bakery,18.4,Food & Dining,expense,credit_card
+111,2024-10-11,Fuel / Petrol,51.34,Transport,expense,bank_transfer
+112,2024-10-26,Uber / Lyft,18.13,Transport,expense,debit_card
+113,2024-10-11,Uber / Lyft,19.59,Transport,expense,bank_transfer
+114,2024-10-21,Metro / Bus Pass,60.69,Transport,expense,bank_transfer
+115,2024-10-08,Car Maintenance,150.29,Transport,expense,debit_card
+116,2024-10-20,Parking,15.42,Transport,expense,debit_card
+117,2024-10-18,Parking,11.07,Transport,expense,upi
+118,2024-10-01,Netflix,15.29,Entertainment,expense,debit_card
+119,2024-10-25,Spotify,9.77,Entertainment,expense,upi
+120,2024-10-22,Cinema Tickets,34.46,Entertainment,expense,bank_transfer
+121,2024-10-19,Cinema Tickets,23.46,Entertainment,expense,bank_transfer
+122,2024-10-16,Gaming / Steam,59.03,Entertainment,expense,debit_card
+123,2024-10-17,Concert / Events,49.78,Entertainment,expense,upi
+124,2024-10-19,Gym Membership,45.1,Health & Fitness,expense,credit_card
+125,2024-10-15,Pharmacy,51.25,Health & Fitness,expense,debit_card
+126,2024-10-05,Doctor Visit,55.44,Health & Fitness,expense,debit_card
+127,2024-10-25,Doctor Visit,91.54,Health & Fitness,expense,credit_card
+128,2024-10-21,Health Insurance,185.15,Health & Fitness,expense,credit_card
+129,2024-10-08,Amazon Purchase,28.38,Shopping,expense,credit_card
+130,2024-10-26,Clothing Store,93.53,Shopping,expense,credit_card
+131,2024-10-01,Clothing Store,117.82,Shopping,expense,credit_card
+132,2024-10-06,Electronics,197.3,Shopping,expense,credit_card
+133,2024-10-24,Home Goods,68.02,Shopping,expense,upi
+134,2024-10-21,Books / Stationery,18.16,Shopping,expense,upi
+135,2024-10-22,Books / Stationery,29.42,Shopping,expense,credit_card
+136,2024-10-22,Electricity Bill,64.37,Utilities,expense,bank_transfer
+137,2024-10-01,Internet Bill,52.02,Utilities,expense,debit_card
+138,2024-10-22,Water Bill,24.85,Utilities,expense,debit_card
+139,2024-10-20,Mobile Phone Bill,48.29,Utilities,expense,bank_transfer
+140,2024-11-01,Monthly Salary,4467.88,Income,income,bank_transfer
+141,2024-11-22,Freelance Income,573.18,Income,income,bank_transfer
+142,2024-11-16,Rent Payment,1268.33,Housing,expense,credit_card
+143,2024-11-22,Grocery Store,64.06,Food & Dining,expense,bank_transfer
+144,2024-11-01,Grocery Store,58.16,Food & Dining,expense,credit_card
+145,2024-11-14,Grocery Store,65.24,Food & Dining,expense,cash
+146,2024-11-07,Restaurant,77.8,Food & Dining,expense,debit_card
+147,2024-11-02,Restaurant,35.44,Food & Dining,expense,credit_card
+148,2024-11-06,Coffee Shop,4.89,Food & Dining,expense,debit_card
+149,2024-11-14,Coffee Shop,10.05,Food & Dining,expense,debit_card
+150,2024-11-20,Coffee Shop,8.1,Food & Dining,expense,cash
+151,2024-11-07,Coffee Shop,13.87,Food & Dining,expense,debit_card
+152,2024-11-02,Coffee Shop,7.76,Food & Dining,expense,debit_card
+153,2024-11-27,Food Delivery,50.09,Food & Dining,expense,debit_card
+154,2024-11-19,Food Delivery,28.45,Food & Dining,expense,bank_transfer
+155,2024-11-27,Food Delivery,25.19,Food & Dining,expense,credit_card
+156,2024-11-17,Food Delivery,50.24,Food & Dining,expense,debit_card
+157,2024-11-23,Food Delivery,62.04,Food & Dining,expense,credit_card
+158,2024-11-26,Bakery,17.3,Food & Dining,expense,debit_card
+159,2024-11-10,Bakery,13.68,Food & Dining,expense,cash
+160,2024-11-01,Fuel / Petrol,49.51,Transport,expense,debit_card
+161,2024-11-05,Fuel / Petrol,56.75,Transport,expense,bank_transfer
+162,2024-11-14,Uber / Lyft,28.12,Transport,expense,upi
+163,2024-11-22,Metro / Bus Pass,56.58,Transport,expense,debit_card
+164,2024-11-16,Car Maintenance,117.93,Transport,expense,credit_card
+165,2024-11-23,Car Maintenance,275.23,Transport,expense,credit_card
+166,2024-11-05,Parking,17.08,Transport,expense,credit_card
+167,2024-11-17,Netflix,15.65,Entertainment,expense,debit_card
+168,2024-11-01,Spotify,9.57,Entertainment,expense,debit_card
+169,2024-11-12,Cinema Tickets,44.99,Entertainment,expense,credit_card
+170,2024-11-12,Gaming / Steam,45.21,Entertainment,expense,bank_transfer
+171,2024-11-28,Gaming / Steam,16.87,Entertainment,expense,upi
+172,2024-11-21,Concert / Events,67.75,Entertainment,expense,bank_transfer
+173,2024-11-25,Gym Membership,55.09,Health & Fitness,expense,credit_card
+174,2024-11-06,Pharmacy,23.06,Health & Fitness,expense,credit_card
+175,2024-11-10,Doctor Visit,68.83,Health & Fitness,expense,bank_transfer
+176,2024-11-04,Doctor Visit,43.13,Health & Fitness,expense,credit_card
+177,2024-11-13,Health Insurance,172.5,Health & Fitness,expense,credit_card
+178,2024-11-13,Amazon Purchase,96.96,Shopping,expense,credit_card
+179,2024-11-06,Clothing Store,122.63,Shopping,expense,credit_card
+180,2024-11-01,Electronics,396.83,Shopping,expense,cash
+181,2024-11-03,Electronics,182.57,Shopping,expense,upi
+182,2024-11-10,Home Goods,75.86,Shopping,expense,debit_card
+183,2024-11-26,Home Goods,52.63,Shopping,expense,credit_card
+184,2024-11-06,Books / Stationery,34.46,Shopping,expense,credit_card
+185,2024-11-06,Books / Stationery,34.91,Shopping,expense,debit_card
+186,2024-11-06,Electricity Bill,68.11,Utilities,expense,upi
+187,2024-11-25,Internet Bill,61.7,Utilities,expense,upi
+188,2024-11-24,Water Bill,33.08,Utilities,expense,debit_card
+189,2024-11-09,Mobile Phone Bill,36.78,Utilities,expense,upi
+190,2024-12-01,Monthly Salary,4666.58,Income,income,bank_transfer
+191,2024-12-19,Rent Payment,1445.63,Housing,expense,bank_transfer
+192,2024-12-17,Grocery Store,106.11,Food & Dining,expense,credit_card
+193,2024-12-14,Grocery Store,84.27,Food & Dining,expense,bank_transfer
+194,2024-12-12,Grocery Store,71.98,Food & Dining,expense,debit_card
+195,2024-12-02,Restaurant,60.79,Food & Dining,expense,debit_card
+196,2024-12-11,Coffee Shop,12.5,Food & Dining,expense,bank_transfer
+197,2024-12-09,Coffee Shop,14.38,Food & Dining,expense,debit_card
+198,2024-12-09,Coffee Shop,5.67,Food & Dining,expense,debit_card
+199,2024-12-13,Coffee Shop,14.09,Food & Dining,expense,bank_transfer
+200,2024-12-03,Food Delivery,54.86,Food & Dining,expense,upi
+201,2024-12-12,Food Delivery,24.67,Food & Dining,expense,bank_transfer
+202,2024-12-17,Food Delivery,44.53,Food & Dining,expense,debit_card
+203,2024-12-16,Food Delivery,50.92,Food & Dining,expense,credit_card
+204,2024-12-05,Food Delivery,40.36,Food & Dining,expense,upi
+205,2024-12-05,Bakery,14.98,Food & Dining,expense,debit_card
+206,2024-12-08,Bakery,8.14,Food & Dining,expense,bank_transfer
+207,2024-12-19,Fuel / Petrol,48.07,Transport,expense,credit_card
+208,2024-12-11,Uber / Lyft,30.3,Transport,expense,credit_card
+209,2024-12-03,Uber / Lyft,17.7,Transport,expense,credit_card
+210,2024-12-18,Metro / Bus Pass,57.21,Transport,expense,bank_transfer
+211,2024-12-27,Car Maintenance,129.51,Transport,expense,bank_transfer
+212,2024-12-28,Car Maintenance,153.33,Transport,expense,credit_card
+213,2024-12-26,Parking,6.54,Transport,expense,credit_card
+214,2024-12-13,Netflix,14.46,Entertainment,expense,bank_transfer
+215,2024-12-18,Spotify,9.02,Entertainment,expense,debit_card
+216,2024-12-07,Cinema Tickets,38.11,Entertainment,expense,debit_card
+217,2024-12-11,Cinema Tickets,48.8,Entertainment,expense,cash
+218,2024-12-27,Gaming / Steam,19.77,Entertainment,expense,debit_card
+219,2024-12-24,Concert / Events,51.26,Entertainment,expense,debit_card
+220,2024-12-06,Gym Membership,73.53,Health & Fitness,expense,upi
+221,2024-12-09,Pharmacy,35.71,Health & Fitness,expense,bank_transfer
+222,2024-12-28,Doctor Visit,151.23,Health & Fitness,expense,bank_transfer
+223,2024-12-23,Doctor Visit,103.65,Health & Fitness,expense,debit_card
+224,2024-12-12,Health Insurance,135.67,Health & Fitness,expense,cash
+225,2024-12-24,Amazon Purchase,123.51,Shopping,expense,bank_transfer
+226,2024-12-13,Clothing Store,55.66,Shopping,expense,debit_card
+227,2024-12-10,Clothing Store,112.55,Shopping,expense,debit_card
+228,2024-12-02,Electronics,203.91,Shopping,expense,credit_card
+229,2024-12-15,Electronics,271.2,Shopping,expense,debit_card
+230,2024-12-14,Home Goods,90.1,Shopping,expense,bank_transfer
+231,2024-12-11,Home Goods,82.34,Shopping,expense,upi
+232,2024-12-14,Books / Stationery,24.6,Shopping,expense,upi
+233,2024-12-22,Books / Stationery,27.24,Shopping,expense,credit_card
+234,2024-12-14,Electricity Bill,71.84,Utilities,expense,debit_card
+235,2024-12-03,Internet Bill,65.79,Utilities,expense,debit_card
+236,2024-12-20,Water Bill,31.99,Utilities,expense,debit_card
+237,2024-12-24,Mobile Phone Bill,30.38,Utilities,expense,bank_transfer
+238,2025-01-01,Monthly Salary,4382.02,Income,income,bank_transfer
+239,2025-01-05,Rent Payment,1601.51,Housing,expense,debit_card
+240,2025-01-16,Grocery Store,107.99,Food & Dining,expense,credit_card
+241,2025-01-20,Grocery Store,67.88,Food & Dining,expense,debit_card
+242,2025-01-13,Grocery Store,109.22,Food & Dining,expense,upi
+243,2025-01-04,Grocery Store,114.29,Food & Dining,expense,debit_card
+244,2025-01-19,Restaurant,56.94,Food & Dining,expense,upi
+245,2025-01-26,Restaurant,50.3,Food & Dining,expense,debit_card
+246,2025-01-27,Restaurant,57.23,Food & Dining,expense,credit_card
+247,2025-01-17,Coffee Shop,5.12,Food & Dining,expense,credit_card
+248,2025-01-19,Coffee Shop,12.92,Food & Dining,expense,debit_card
+249,2025-01-28,Coffee Shop,8.87,Food & Dining,expense,bank_transfer
+250,2025-01-28,Coffee Shop,12.17,Food & Dining,expense,credit_card
+251,2025-01-19,Coffee Shop,11.82,Food & Dining,expense,upi
+252,2025-01-12,Food Delivery,47.79,Food & Dining,expense,upi
+253,2025-01-05,Food Delivery,28.77,Food & Dining,expense,cash
+254,2025-01-26,Food Delivery,50.3,Food & Dining,expense,debit_card
+255,2025-01-03,Food Delivery,55.4,Food & Dining,expense,debit_card
+256,2025-01-07,Bakery,11.64,Food & Dining,expense,cash
+257,2025-01-17,Bakery,17.69,Food & Dining,expense,debit_card
+258,2025-01-14,Bakery,15.89,Food & Dining,expense,credit_card
+259,2025-01-26,Bakery,16.88,Food & Dining,expense,upi
+260,2025-01-08,Bakery,16.03,Food & Dining,expense,credit_card
+261,2025-01-21,Fuel / Petrol,45.49,Transport,expense,bank_transfer
+262,2025-01-04,Fuel / Petrol,75.68,Transport,expense,credit_card
+263,2025-01-27,Uber / Lyft,21.01,Transport,expense,upi
+264,2025-01-02,Uber / Lyft,28.15,Transport,expense,credit_card
+265,2025-01-13,Metro / Bus Pass,28.57,Transport,expense,upi
+266,2025-01-14,Car Maintenance,172.36,Transport,expense,upi
+267,2025-01-17,Parking,20.26,Transport,expense,bank_transfer
+268,2025-01-06,Netflix,15.16,Entertainment,expense,upi
+269,2025-01-16,Spotify,10.83,Entertainment,expense,credit_card
+270,2025-01-07,Cinema Tickets,41.04,Entertainment,expense,debit_card
+271,2025-01-05,Cinema Tickets,32.0,Entertainment,expense,upi
+272,2025-01-20,Gaming / Steam,31.89,Entertainment,expense,debit_card
+273,2025-01-14,Concert / Events,99.34,Entertainment,expense,debit_card
+274,2025-01-15,Concert / Events,115.17,Entertainment,expense,upi
+275,2025-01-27,Gym Membership,37.68,Health & Fitness,expense,upi
+276,2025-01-24,Pharmacy,50.91,Health & Fitness,expense,bank_transfer
+277,2025-01-13,Doctor Visit,77.65,Health & Fitness,expense,credit_card
+278,2025-01-12,Doctor Visit,44.6,Health & Fitness,expense,credit_card
+279,2025-01-13,Health Insurance,160.55,Health & Fitness,expense,credit_card
+280,2025-01-02,Amazon Purchase,78.49,Shopping,expense,credit_card
+281,2025-01-17,Clothing Store,77.86,Shopping,expense,upi
+282,2025-01-20,Clothing Store,99.73,Shopping,expense,credit_card
+283,2025-01-02,Electronics,377.54,Shopping,expense,credit_card
+284,2025-01-22,Home Goods,91.26,Shopping,expense,bank_transfer
+285,2025-01-21,Home Goods,57.71,Shopping,expense,credit_card
+286,2025-01-17,Books / Stationery,12.82,Shopping,expense,bank_transfer
+287,2025-01-05,Books / Stationery,10.93,Shopping,expense,credit_card
+288,2025-01-18,Electricity Bill,72.15,Utilities,expense,debit_card
+289,2025-01-16,Internet Bill,61.83,Utilities,expense,credit_card
+290,2025-01-17,Water Bill,36.17,Utilities,expense,cash
+291,2025-01-22,Mobile Phone Bill,42.98,Utilities,expense,upi
+292,2025-02-01,Monthly Salary,4913.1,Income,income,bank_transfer
+293,2025-02-05,Rent Payment,1543.28,Housing,expense,credit_card
+294,2025-02-02,Grocery Store,82.71,Food & Dining,expense,credit_card
+295,2025-02-13,Grocery Store,101.94,Food & Dining,expense,upi
+296,2025-02-24,Grocery Store,96.99,Food & Dining,expense,bank_transfer
+297,2025-02-22,Grocery Store,90.02,Food & Dining,expense,debit_card
+298,2025-02-08,Restaurant,63.49,Food & Dining,expense,debit_card
+299,2025-02-25,Restaurant,41.47,Food & Dining,expense,cash
+300,2025-02-02,Restaurant,83.14,Food & Dining,expense,debit_card
+301,2025-02-05,Restaurant,74.48,Food & Dining,expense,credit_card
+302,2025-02-12,Restaurant,74.46,Food & Dining,expense,credit_card
+303,2025-02-20,Coffee Shop,15.21,Food & Dining,expense,debit_card
+304,2025-02-10,Coffee Shop,9.25,Food & Dining,expense,debit_card
+305,2025-02-01,Coffee Shop,5.45,Food & Dining,expense,bank_transfer
+306,2025-02-09,Coffee Shop,15.01,Food & Dining,expense,bank_transfer
+307,2025-02-15,Coffee Shop,8.81,Food & Dining,expense,debit_card
+308,2025-02-10,Food Delivery,55.22,Food & Dining,expense,bank_transfer
+309,2025-02-12,Food Delivery,48.15,Food & Dining,expense,debit_card
+310,2025-02-20,Food Delivery,50.18,Food & Dining,expense,debit_card
+311,2025-02-08,Bakery,11.71,Food & Dining,expense,debit_card
+312,2025-02-22,Fuel / Petrol,58.47,Transport,expense,cash
+313,2025-02-25,Uber / Lyft,28.07,Transport,expense,credit_card
+314,2025-02-28,Uber / Lyft,29.81,Transport,expense,upi
+315,2025-02-15,Metro / Bus Pass,56.04,Transport,expense,credit_card
+316,2025-02-11,Car Maintenance,246.4,Transport,expense,bank_transfer
+317,2025-02-28,Car Maintenance,246.24,Transport,expense,debit_card
+318,2025-02-01,Parking,21.53,Transport,expense,credit_card
+319,2025-02-22,Netflix,14.67,Entertainment,expense,upi
+320,2025-02-03,Spotify,10.19,Entertainment,expense,bank_transfer
+321,2025-02-02,Cinema Tickets,18.78,Entertainment,expense,credit_card
+322,2025-02-06,Gaming / Steam,41.43,Entertainment,expense,debit_card
+323,2025-02-15,Gaming / Steam,16.37,Entertainment,expense,upi
+324,2025-02-06,Concert / Events,135.35,Entertainment,expense,credit_card
+325,2025-02-11,Concert / Events,51.93,Entertainment,expense,bank_transfer
+326,2025-02-17,Gym Membership,66.6,Health & Fitness,expense,credit_card
+327,2025-02-12,Pharmacy,19.01,Health & Fitness,expense,upi
+328,2025-02-06,Doctor Visit,54.85,Health & Fitness,expense,bank_transfer
+329,2025-02-09,Health Insurance,149.97,Health & Fitness,expense,credit_card
+330,2025-02-03,Amazon Purchase,65.25,Shopping,expense,upi
+331,2025-02-05,Amazon Purchase,70.37,Shopping,expense,credit_card
+332,2025-02-09,Clothing Store,134.42,Shopping,expense,upi
+333,2025-02-24,Clothing Store,77.19,Shopping,expense,upi
+334,2025-02-23,Electronics,185.05,Shopping,expense,debit_card
+335,2025-02-26,Home Goods,39.84,Shopping,expense,credit_card
+336,2025-02-13,Home Goods,56.02,Shopping,expense,bank_transfer
+337,2025-02-17,Books / Stationery,11.51,Shopping,expense,bank_transfer
+338,2025-02-15,Books / Stationery,24.52,Shopping,expense,upi
+339,2025-02-04,Electricity Bill,50.05,Utilities,expense,credit_card
+340,2025-02-10,Internet Bill,46.89,Utilities,expense,debit_card
+341,2025-02-05,Water Bill,26.23,Utilities,expense,upi
+342,2025-02-12,Mobile Phone Bill,58.24,Utilities,expense,debit_card
+343,2025-03-01,Monthly Salary,4797.44,Income,income,bank_transfer
+344,2025-03-06,Rent Payment,1426.87,Housing,expense,credit_card
+345,2025-03-16,Grocery Store,83.94,Food & Dining,expense,upi
+346,2025-03-09,Restaurant,26.5,Food & Dining,expense,bank_transfer
+347,2025-03-20,Restaurant,70.62,Food & Dining,expense,debit_card
+348,2025-03-27,Restaurant,78.99,Food & Dining,expense,credit_card
+349,2025-03-21,Restaurant,50.08,Food & Dining,expense,cash
+350,2025-03-14,Restaurant,45.7,Food & Dining,expense,bank_transfer
+351,2025-03-23,Coffee Shop,9.66,Food & Dining,expense,debit_card
+352,2025-03-05,Coffee Shop,11.99,Food & Dining,expense,bank_transfer
+353,2025-03-14,Coffee Shop,6.12,Food & Dining,expense,credit_card
+354,2025-03-18,Coffee Shop,4.87,Food & Dining,expense,credit_card
+355,2025-03-19,Food Delivery,27.11,Food & Dining,expense,credit_card
+356,2025-03-27,Food Delivery,51.2,Food & Dining,expense,debit_card
+357,2025-03-27,Bakery,19.1,Food & Dining,expense,credit_card
+358,2025-03-03,Bakery,12.77,Food & Dining,expense,bank_transfer
+359,2025-03-06,Bakery,16.53,Food & Dining,expense,credit_card
+360,2025-03-08,Bakery,13.04,Food & Dining,expense,debit_card
+361,2025-03-16,Bakery,9.79,Food & Dining,expense,upi
+362,2025-03-24,Fuel / Petrol,70.6,Transport,expense,credit_card
+363,2025-03-16,Fuel / Petrol,43.19,Transport,expense,bank_transfer
+364,2025-03-24,Uber / Lyft,26.19,Transport,expense,upi
+365,2025-03-20,Metro / Bus Pass,56.99,Transport,expense,debit_card
+366,2025-03-24,Car Maintenance,255.88,Transport,expense,credit_card
+367,2025-03-12,Parking,15.19,Transport,expense,credit_card
+368,2025-03-03,Parking,24.77,Transport,expense,credit_card
+369,2025-03-03,Netflix,17.11,Entertainment,expense,credit_card
+370,2025-03-21,Spotify,9.91,Entertainment,expense,credit_card
+371,2025-03-19,Cinema Tickets,40.91,Entertainment,expense,debit_card
+372,2025-03-08,Cinema Tickets,26.57,Entertainment,expense,credit_card
+373,2025-03-18,Gaming / Steam,11.76,Entertainment,expense,bank_transfer
+374,2025-03-03,Gaming / Steam,61.08,Entertainment,expense,credit_card
+375,2025-03-04,Concert / Events,100.97,Entertainment,expense,cash
+376,2025-03-09,Gym Membership,68.96,Health & Fitness,expense,debit_card
+377,2025-03-21,Pharmacy,18.17,Health & Fitness,expense,bank_transfer
+378,2025-03-23,Doctor Visit,76.26,Health & Fitness,expense,credit_card
+379,2025-03-27,Doctor Visit,126.4,Health & Fitness,expense,upi
+380,2025-03-16,Health Insurance,150.27,Health & Fitness,expense,credit_card
+381,2025-03-18,Amazon Purchase,98.67,Shopping,expense,credit_card
+382,2025-03-03,Clothing Store,45.27,Shopping,expense,upi
+383,2025-03-04,Electronics,58.6,Shopping,expense,bank_transfer
+384,2025-03-19,Home Goods,29.76,Shopping,expense,upi
+385,2025-03-14,Books / Stationery,19.42,Shopping,expense,debit_card
+386,2025-03-18,Books / Stationery,36.34,Shopping,expense,bank_transfer
+387,2025-03-27,Electricity Bill,97.04,Utilities,expense,bank_transfer
+388,2025-03-10,Internet Bill,55.19,Utilities,expense,bank_transfer
+389,2025-03-02,Water Bill,30.97,Utilities,expense,bank_transfer
+390,2025-03-20,Mobile Phone Bill,54.83,Utilities,expense,bank_transfer
+391,2025-04-01,Monthly Salary,4430.88,Income,income,bank_transfer
+392,2025-04-13,Rent Payment,1455.37,Housing,expense,bank_transfer
+393,2025-04-20,Grocery Store,67.78,Food & Dining,expense,credit_card
+394,2025-04-17,Grocery Store,84.68,Food & Dining,expense,cash
+395,2025-04-11,Grocery Store,107.39,Food & Dining,expense,credit_card
+396,2025-04-15,Grocery Store,119.16,Food & Dining,expense,credit_card
+397,2025-04-21,Restaurant,24.76,Food & Dining,expense,upi
+398,2025-04-07,Restaurant,69.33,Food & Dining,expense,bank_transfer
+399,2025-04-07,Coffee Shop,12.65,Food & Dining,expense,credit_card
+400,2025-04-09,Food Delivery,41.58,Food & Dining,expense,cash
+401,2025-04-24,Food Delivery,37.28,Food & Dining,expense,upi
+402,2025-04-04,Food Delivery,40.94,Food & Dining,expense,credit_card
+403,2025-04-14,Food Delivery,35.58,Food & Dining,expense,bank_transfer
+404,2025-04-05,Food Delivery,36.28,Food & Dining,expense,credit_card
+405,2025-04-12,Bakery,12.25,Food & Dining,expense,credit_card
+406,2025-04-26,Bakery,15.57,Food & Dining,expense,credit_card
+407,2025-04-16,Bakery,20.34,Food & Dining,expense,debit_card
+408,2025-04-19,Fuel / Petrol,67.7,Transport,expense,cash
+409,2025-04-09,Uber / Lyft,23.78,Transport,expense,credit_card
+410,2025-04-24,Metro / Bus Pass,58.0,Transport,expense,bank_transfer
+411,2025-04-12,Car Maintenance,186.31,Transport,expense,bank_transfer
+412,2025-04-06,Car Maintenance,271.95,Transport,expense,debit_card
+413,2025-04-16,Parking,24.47,Transport,expense,debit_card
+414,2025-04-12,Netflix,15.35,Entertainment,expense,bank_transfer
+415,2025-04-14,Spotify,9.6,Entertainment,expense,debit_card
+416,2025-04-17,Cinema Tickets,23.09,Entertainment,expense,credit_card
+417,2025-04-21,Cinema Tickets,33.75,Entertainment,expense,upi
+418,2025-04-27,Gaming / Steam,14.07,Entertainment,expense,debit_card
+419,2025-04-18,Concert / Events,49.21,Entertainment,expense,bank_transfer
+420,2025-04-02,Gym Membership,67.07,Health & Fitness,expense,bank_transfer
+421,2025-04-11,Pharmacy,50.06,Health & Fitness,expense,debit_card
+422,2025-04-18,Pharmacy,45.36,Health & Fitness,expense,debit_card
+423,2025-04-18,Doctor Visit,77.2,Health & Fitness,expense,upi
+424,2025-04-28,Health Insurance,115.74,Health & Fitness,expense,credit_card
+425,2025-04-23,Amazon Purchase,94.31,Shopping,expense,debit_card
+426,2025-04-26,Amazon Purchase,50.34,Shopping,expense,cash
+427,2025-04-10,Clothing Store,87.98,Shopping,expense,bank_transfer
+428,2025-04-26,Electronics,121.98,Shopping,expense,credit_card
+429,2025-04-15,Electronics,311.93,Shopping,expense,upi
+430,2025-04-17,Home Goods,47.79,Shopping,expense,credit_card
+431,2025-04-27,Books / Stationery,38.66,Shopping,expense,cash
+432,2025-04-22,Books / Stationery,24.15,Shopping,expense,credit_card
+433,2025-04-11,Electricity Bill,84.94,Utilities,expense,credit_card
+434,2025-04-16,Internet Bill,70.84,Utilities,expense,bank_transfer
+435,2025-04-04,Water Bill,36.46,Utilities,expense,credit_card
+436,2025-04-19,Mobile Phone Bill,48.61,Utilities,expense,credit_card
+437,2025-05-01,Monthly Salary,4221.88,Income,income,bank_transfer
+438,2025-05-03,Rent Payment,1270.67,Housing,expense,bank_transfer
+439,2025-05-09,Grocery Store,114.5,Food & Dining,expense,debit_card
+440,2025-05-22,Grocery Store,113.72,Food & Dining,expense,credit_card
+441,2025-05-07,Grocery Store,74.22,Food & Dining,expense,credit_card
+442,2025-05-23,Restaurant,49.81,Food & Dining,expense,cash
+443,2025-05-11,Restaurant,44.37,Food & Dining,expense,bank_transfer
+444,2025-05-13,Restaurant,33.7,Food & Dining,expense,bank_transfer
+445,2025-05-11,Coffee Shop,7.68,Food & Dining,expense,credit_card
+446,2025-05-28,Coffee Shop,14.65,Food & Dining,expense,debit_card
+447,2025-05-02,Coffee Shop,8.13,Food & Dining,expense,credit_card
+448,2025-05-22,Food Delivery,31.76,Food & Dining,expense,debit_card
+449,2025-05-06,Bakery,11.91,Food & Dining,expense,debit_card
+450,2025-05-04,Bakery,18.06,Food & Dining,expense,upi
+451,2025-05-01,Fuel / Petrol,57.5,Transport,expense,credit_card
+452,2025-05-16,Uber / Lyft,23.65,Transport,expense,bank_transfer
+453,2025-05-24,Metro / Bus Pass,45.4,Transport,expense,bank_transfer
+454,2025-05-27,Car Maintenance,142.28,Transport,expense,debit_card
+455,2025-05-21,Parking,13.99,Transport,expense,credit_card
+456,2025-05-16,Netflix,16.44,Entertainment,expense,credit_card
+457,2025-05-03,Spotify,10.4,Entertainment,expense,credit_card
+458,2025-05-12,Cinema Tickets,52.34,Entertainment,expense,bank_transfer
+459,2025-05-05,Cinema Tickets,30.64,Entertainment,expense,bank_transfer
+460,2025-05-13,Gaming / Steam,35.7,Entertainment,expense,credit_card
+461,2025-05-25,Gaming / Steam,39.0,Entertainment,expense,debit_card
+462,2025-05-20,Concert / Events,108.46,Entertainment,expense,credit_card
+463,2025-05-10,Gym Membership,55.16,Health & Fitness,expense,credit_card
+464,2025-05-02,Pharmacy,39.86,Health & Fitness,expense,credit_card
+465,2025-05-26,Pharmacy,53.19,Health & Fitness,expense,debit_card
+466,2025-05-19,Doctor Visit,38.82,Health & Fitness,expense,debit_card
+467,2025-05-11,Doctor Visit,115.96,Health & Fitness,expense,upi
+468,2025-05-27,Health Insurance,194.09,Health & Fitness,expense,debit_card
+469,2025-05-25,Amazon Purchase,52.1,Shopping,expense,credit_card
+470,2025-05-03,Amazon Purchase,36.88,Shopping,expense,bank_transfer
+471,2025-05-10,Clothing Store,47.05,Shopping,expense,credit_card
+472,2025-05-14,Clothing Store,36.87,Shopping,expense,credit_card
+473,2025-05-24,Electronics,100.91,Shopping,expense,credit_card
+474,2025-05-19,Electronics,91.69,Shopping,expense,credit_card
+475,2025-05-05,Home Goods,30.69,Shopping,expense,credit_card
+476,2025-05-20,Home Goods,81.78,Shopping,expense,debit_card
+477,2025-05-16,Books / Stationery,24.99,Shopping,expense,credit_card
+478,2025-05-15,Books / Stationery,13.88,Shopping,expense,credit_card
+479,2025-05-08,Electricity Bill,54.08,Utilities,expense,credit_card
+480,2025-05-24,Internet Bill,40.51,Utilities,expense,credit_card
+481,2025-05-16,Water Bill,27.47,Utilities,expense,debit_card
+482,2025-05-24,Mobile Phone Bill,53.09,Utilities,expense,upi
+483,2025-06-01,Monthly Salary,4746.19,Income,income,bank_transfer
+484,2025-06-28,Rent Payment,1391.88,Housing,expense,credit_card
+485,2025-06-19,Grocery Store,83.18,Food & Dining,expense,credit_card
+486,2025-06-10,Grocery Store,72.67,Food & Dining,expense,credit_card
+487,2025-06-18,Grocery Store,110.88,Food & Dining,expense,debit_card
+488,2025-06-17,Restaurant,37.43,Food & Dining,expense,credit_card
+489,2025-06-14,Restaurant,68.43,Food & Dining,expense,upi
+490,2025-06-10,Restaurant,64.08,Food & Dining,expense,credit_card
+491,2025-06-23,Coffee Shop,9.16,Food & Dining,expense,credit_card
+492,2025-06-07,Coffee Shop,13.35,Food & Dining,expense,credit_card
+493,2025-06-22,Food Delivery,36.52,Food & Dining,expense,credit_card
+494,2025-06-01,Food Delivery,35.37,Food & Dining,expense,debit_card
+495,2025-06-19,Food Delivery,24.67,Food & Dining,expense,credit_card
+496,2025-06-01,Food Delivery,33.49,Food & Dining,expense,bank_transfer
+497,2025-06-12,Bakery,20.03,Food & Dining,expense,credit_card
+498,2025-06-09,Bakery,9.18,Food & Dining,expense,debit_card
+499,2025-06-28,Fuel / Petrol,62.45,Transport,expense,debit_card
+500,2025-06-04,Uber / Lyft,29.99,Transport,expense,upi
+501,2025-06-01,Metro / Bus Pass,35.69,Transport,expense,credit_card
+502,2025-06-22,Car Maintenance,164.11,Transport,expense,credit_card
+503,2025-06-19,Car Maintenance,262.49,Transport,expense,credit_card
+504,2025-06-08,Parking,17.34,Transport,expense,debit_card
+505,2025-06-04,Netflix,14.5,Entertainment,expense,credit_card
+506,2025-06-19,Spotify,9.59,Entertainment,expense,debit_card
+507,2025-06-07,Cinema Tickets,31.0,Entertainment,expense,upi
+508,2025-06-20,Cinema Tickets,36.8,Entertainment,expense,debit_card
+509,2025-06-20,Gaming / Steam,52.23,Entertainment,expense,credit_card
+510,2025-06-24,Gaming / Steam,26.23,Entertainment,expense,credit_card
+511,2025-06-19,Concert / Events,156.18,Entertainment,expense,credit_card
+512,2025-06-07,Concert / Events,81.66,Entertainment,expense,debit_card
+513,2025-06-03,Gym Membership,43.06,Health & Fitness,expense,bank_transfer
+514,2025-06-03,Pharmacy,16.37,Health & Fitness,expense,bank_transfer
+515,2025-06-02,Doctor Visit,57.84,Health & Fitness,expense,credit_card
+516,2025-06-24,Health Insurance,149.3,Health & Fitness,expense,cash
+517,2025-06-24,Amazon Purchase,117.94,Shopping,expense,debit_card
+518,2025-06-18,Clothing Store,138.15,Shopping,expense,bank_transfer
+519,2025-06-14,Electronics,385.33,Shopping,expense,upi
+520,2025-06-17,Electronics,380.22,Shopping,expense,credit_card
+521,2025-06-14,Home Goods,93.35,Shopping,expense,credit_card
+522,2025-06-22,Books / Stationery,16.86,Shopping,expense,credit_card
+523,2025-06-24,Electricity Bill,54.65,Utilities,expense,credit_card
+524,2025-06-12,Internet Bill,62.33,Utilities,expense,credit_card
+525,2025-06-13,Water Bill,37.77,Utilities,expense,cash
+526,2025-06-16,Mobile Phone Bill,43.26,Utilities,expense,bank_transfer
+527,2025-07-01,Monthly Salary,4612.2,Income,income,bank_transfer
+528,2025-07-16,Freelance Income,833.29,Income,income,bank_transfer
+529,2025-07-12,Rent Payment,1423.47,Housing,expense,bank_transfer
+530,2025-07-25,Grocery Store,70.83,Food & Dining,expense,credit_card
+531,2025-07-05,Restaurant,52.0,Food & Dining,expense,upi
+532,2025-07-08,Restaurant,20.72,Food & Dining,expense,credit_card
+533,2025-07-20,Restaurant,22.36,Food & Dining,expense,credit_card
+534,2025-07-02,Coffee Shop,15.66,Food & Dining,expense,upi
+535,2025-07-11,Coffee Shop,9.92,Food & Dining,expense,bank_transfer
+536,2025-07-04,Coffee Shop,7.85,Food & Dining,expense,bank_transfer
+537,2025-07-15,Coffee Shop,6.16,Food & Dining,expense,upi
+538,2025-07-03,Coffee Shop,15.49,Food & Dining,expense,credit_card
+539,2025-07-10,Food Delivery,48.89,Food & Dining,expense,credit_card
+540,2025-07-01,Food Delivery,44.53,Food & Dining,expense,upi
+541,2025-07-03,Food Delivery,48.9,Food & Dining,expense,credit_card
+542,2025-07-06,Food Delivery,27.11,Food & Dining,expense,bank_transfer
+543,2025-07-07,Bakery,19.16,Food & Dining,expense,upi
+544,2025-07-28,Bakery,15.81,Food & Dining,expense,cash
+545,2025-07-13,Bakery,13.91,Food & Dining,expense,credit_card
+546,2025-07-24,Bakery,12.44,Food & Dining,expense,credit_card
+547,2025-07-03,Fuel / Petrol,60.53,Transport,expense,credit_card
+548,2025-07-12,Fuel / Petrol,70.21,Transport,expense,debit_card
+549,2025-07-07,Uber / Lyft,16.15,Transport,expense,cash
+550,2025-07-18,Uber / Lyft,15.77,Transport,expense,bank_transfer
+551,2025-07-27,Metro / Bus Pass,43.92,Transport,expense,upi
+552,2025-07-06,Car Maintenance,264.55,Transport,expense,credit_card
+553,2025-07-13,Parking,20.86,Transport,expense,bank_transfer
+554,2025-07-05,Netflix,15.66,Entertainment,expense,debit_card
+555,2025-07-16,Spotify,10.94,Entertainment,expense,debit_card
+556,2025-07-24,Cinema Tickets,26.62,Entertainment,expense,debit_card
+557,2025-07-16,Cinema Tickets,32.76,Entertainment,expense,cash
+558,2025-07-25,Gaming / Steam,59.63,Entertainment,expense,upi
+559,2025-07-09,Concert / Events,50.6,Entertainment,expense,credit_card
+560,2025-07-28,Gym Membership,59.6,Health & Fitness,expense,debit_card
+561,2025-07-14,Pharmacy,22.0,Health & Fitness,expense,credit_card
+562,2025-07-19,Doctor Visit,93.73,Health & Fitness,expense,bank_transfer
+563,2025-07-19,Doctor Visit,100.16,Health & Fitness,expense,debit_card
+564,2025-07-28,Health Insurance,117.28,Health & Fitness,expense,credit_card
+565,2025-07-03,Amazon Purchase,63.58,Shopping,expense,credit_card
+566,2025-07-28,Clothing Store,30.17,Shopping,expense,bank_transfer
+567,2025-07-17,Clothing Store,48.63,Shopping,expense,debit_card
+568,2025-07-23,Electronics,350.19,Shopping,expense,credit_card
+569,2025-07-24,Home Goods,93.7,Shopping,expense,credit_card
+570,2025-07-22,Books / Stationery,18.57,Shopping,expense,credit_card
+571,2025-07-27,Electricity Bill,62.76,Utilities,expense,debit_card
+572,2025-07-13,Internet Bill,47.76,Utilities,expense,credit_card
+573,2025-07-11,Water Bill,24.82,Utilities,expense,debit_card
+574,2025-07-03,Mobile Phone Bill,30.92,Utilities,expense,upi
+575,2025-08-01,Monthly Salary,4497.87,Income,income,bank_transfer
+576,2025-08-21,Rent Payment,1636.87,Housing,expense,debit_card
+577,2025-08-18,Grocery Store,114.91,Food & Dining,expense,debit_card
+578,2025-08-24,Grocery Store,68.8,Food & Dining,expense,debit_card
+579,2025-08-22,Grocery Store,76.8,Food & Dining,expense,debit_card
+580,2025-08-12,Restaurant,32.15,Food & Dining,expense,credit_card
+581,2025-08-23,Restaurant,35.38,Food & Dining,expense,credit_card
+582,2025-08-26,Coffee Shop,12.38,Food & Dining,expense,credit_card
+583,2025-08-16,Coffee Shop,8.95,Food & Dining,expense,debit_card
+584,2025-08-27,Coffee Shop,10.56,Food & Dining,expense,upi
+585,2025-08-02,Food Delivery,51.67,Food & Dining,expense,upi
+586,2025-08-10,Food Delivery,31.65,Food & Dining,expense,credit_card
+587,2025-08-15,Bakery,19.14,Food & Dining,expense,upi
+588,2025-08-27,Bakery,17.1,Food & Dining,expense,bank_transfer
+589,2025-08-08,Fuel / Petrol,79.02,Transport,expense,bank_transfer
+590,2025-08-23,Uber / Lyft,11.89,Transport,expense,cash
+591,2025-08-12,Metro / Bus Pass,54.74,Transport,expense,debit_card
+592,2025-08-19,Car Maintenance,283.38,Transport,expense,credit_card
+593,2025-08-26,Parking,25.84,Transport,expense,debit_card
+594,2025-08-26,Parking,19.24,Transport,expense,debit_card
+595,2025-08-05,Netflix,15.63,Entertainment,expense,credit_card
+596,2025-08-04,Spotify,9.1,Entertainment,expense,debit_card
+597,2025-08-27,Cinema Tickets,29.03,Entertainment,expense,credit_card
+598,2025-08-26,Gaming / Steam,46.98,Entertainment,expense,bank_transfer
+599,2025-08-19,Concert / Events,83.19,Entertainment,expense,debit_card
+600,2025-08-10,Concert / Events,117.87,Entertainment,expense,bank_transfer
+601,2025-08-22,Gym Membership,61.03,Health & Fitness,expense,credit_card
+602,2025-08-17,Pharmacy,21.99,Health & Fitness,expense,credit_card
+603,2025-08-26,Pharmacy,23.95,Health & Fitness,expense,credit_card
+604,2025-08-15,Doctor Visit,112.63,Health & Fitness,expense,bank_transfer
+605,2025-08-20,Doctor Visit,77.19,Health & Fitness,expense,debit_card
+606,2025-08-19,Health Insurance,193.2,Health & Fitness,expense,debit_card
+607,2025-08-03,Amazon Purchase,50.31,Shopping,expense,credit_card
+608,2025-08-01,Amazon Purchase,28.06,Shopping,expense,cash
+609,2025-08-15,Clothing Store,84.5,Shopping,expense,upi
+610,2025-08-04,Clothing Store,123.05,Shopping,expense,debit_card
+611,2025-08-14,Electronics,79.18,Shopping,expense,debit_card
+612,2025-08-14,Electronics,287.92,Shopping,expense,debit_card
+613,2025-08-06,Home Goods,29.02,Shopping,expense,credit_card
+614,2025-08-27,Home Goods,106.83,Shopping,expense,debit_card
+615,2025-08-02,Books / Stationery,23.07,Shopping,expense,credit_card
+616,2025-08-10,Books / Stationery,39.05,Shopping,expense,upi
+617,2025-08-01,Electricity Bill,52.74,Utilities,expense,debit_card
+618,2025-08-03,Internet Bill,64.28,Utilities,expense,credit_card
+619,2025-08-13,Water Bill,28.52,Utilities,expense,bank_transfer
+620,2025-08-28,Mobile Phone Bill,51.81,Utilities,expense,debit_card
+621,2025-09-01,Monthly Salary,4359.77,Income,income,bank_transfer
+622,2025-09-04,Rent Payment,1435.89,Housing,expense,bank_transfer
+623,2025-09-15,Grocery Store,122.01,Food & Dining,expense,debit_card
+624,2025-09-13,Grocery Store,103.43,Food & Dining,expense,debit_card
+625,2025-09-04,Grocery Store,71.86,Food & Dining,expense,cash
+626,2025-09-10,Grocery Store,124.59,Food & Dining,expense,cash
+627,2025-09-20,Grocery Store,102.4,Food & Dining,expense,bank_transfer
+628,2025-09-04,Restaurant,53.55,Food & Dining,expense,cash
+629,2025-09-20,Restaurant,70.65,Food & Dining,expense,upi
+630,2025-09-14,Restaurant,43.49,Food & Dining,expense,debit_card
+631,2025-09-05,Restaurant,34.28,Food & Dining,expense,credit_card
+632,2025-09-06,Coffee Shop,15.07,Food & Dining,expense,credit_card
+633,2025-09-18,Coffee Shop,13.38,Food & Dining,expense,bank_transfer
+634,2025-09-18,Coffee Shop,13.23,Food & Dining,expense,credit_card
+635,2025-09-27,Food Delivery,49.48,Food & Dining,expense,credit_card
+636,2025-09-23,Food Delivery,24.57,Food & Dining,expense,upi
+637,2025-09-19,Food Delivery,50.02,Food & Dining,expense,cash
+638,2025-09-26,Bakery,13.29,Food & Dining,expense,cash
+639,2025-09-06,Bakery,12.14,Food & Dining,expense,credit_card
+640,2025-09-12,Fuel / Petrol,69.66,Transport,expense,credit_card
+641,2025-09-26,Uber / Lyft,15.88,Transport,expense,cash
+642,2025-09-09,Uber / Lyft,21.79,Transport,expense,upi
+643,2025-09-19,Metro / Bus Pass,48.07,Transport,expense,debit_card
+644,2025-09-08,Car Maintenance,128.22,Transport,expense,debit_card
+645,2025-09-23,Parking,13.21,Transport,expense,upi
+646,2025-09-17,Parking,25.24,Transport,expense,credit_card
+647,2025-09-05,Netflix,16.18,Entertainment,expense,debit_card
+648,2025-09-02,Spotify,10.7,Entertainment,expense,credit_card
+649,2025-09-05,Cinema Tickets,35.22,Entertainment,expense,debit_card
+650,2025-09-19,Cinema Tickets,35.39,Entertainment,expense,upi
+651,2025-09-07,Gaming / Steam,59.49,Entertainment,expense,debit_card
+652,2025-09-01,Gaming / Steam,43.08,Entertainment,expense,credit_card
+653,2025-09-24,Concert / Events,52.34,Entertainment,expense,debit_card
+654,2025-09-07,Concert / Events,103.31,Entertainment,expense,debit_card
+655,2025-09-16,Gym Membership,61.03,Health & Fitness,expense,credit_card
+656,2025-09-11,Pharmacy,33.95,Health & Fitness,expense,bank_transfer
+657,2025-09-06,Pharmacy,44.42,Health & Fitness,expense,cash
+658,2025-09-05,Doctor Visit,61.22,Health & Fitness,expense,bank_transfer
+659,2025-09-01,Doctor Visit,59.31,Health & Fitness,expense,upi
+660,2025-09-28,Health Insurance,198.59,Health & Fitness,expense,credit_card
+661,2025-09-24,Amazon Purchase,17.55,Shopping,expense,credit_card
+662,2025-09-19,Clothing Store,43.1,Shopping,expense,debit_card
+663,2025-09-28,Clothing Store,46.05,Shopping,expense,credit_card
+664,2025-09-01,Electronics,127.12,Shopping,expense,upi
+665,2025-09-18,Home Goods,44.5,Shopping,expense,bank_transfer
+666,2025-09-10,Books / Stationery,39.84,Shopping,expense,credit_card
+667,2025-09-05,Electricity Bill,94.69,Utilities,expense,upi
+668,2025-09-20,Internet Bill,61.3,Utilities,expense,debit_card
+669,2025-09-18,Water Bill,34.33,Utilities,expense,credit_card
+670,2025-09-18,Mobile Phone Bill,56.02,Utilities,expense,bank_transfer
+671,2025-10-01,Monthly Salary,4831.68,Income,income,bank_transfer
+672,2025-10-05,Rent Payment,1451.32,Housing,expense,credit_card
+673,2025-10-09,Grocery Store,105.27,Food & Dining,expense,credit_card
+674,2025-10-09,Grocery Store,76.92,Food & Dining,expense,cash
+675,2025-10-24,Restaurant,83.43,Food & Dining,expense,bank_transfer
+676,2025-10-27,Coffee Shop,7.75,Food & Dining,expense,upi
+677,2025-10-02,Coffee Shop,11.08,Food & Dining,expense,cash
+678,2025-10-05,Coffee Shop,9.6,Food & Dining,expense,credit_card
+679,2025-10-22,Coffee Shop,4.8,Food & Dining,expense,credit_card
+680,2025-10-23,Food Delivery,31.32,Food & Dining,expense,upi
+681,2025-10-23,Bakery,16.59,Food & Dining,expense,debit_card
+682,2025-10-01,Fuel / Petrol,58.57,Transport,expense,debit_card
+683,2025-10-24,Fuel / Petrol,74.23,Transport,expense,credit_card
+684,2025-10-16,Uber / Lyft,14.29,Transport,expense,credit_card
+685,2025-10-07,Metro / Bus Pass,27.79,Transport,expense,credit_card
+686,2025-10-19,Car Maintenance,86.08,Transport,expense,credit_card
+687,2025-10-12,Car Maintenance,127.83,Transport,expense,bank_transfer
+688,2025-10-14,Parking,4.92,Transport,expense,upi
+689,2025-10-19,Parking,18.22,Transport,expense,upi
+690,2025-10-16,Netflix,16.66,Entertainment,expense,credit_card
+691,2025-10-15,Spotify,10.99,Entertainment,expense,upi
+692,2025-10-03,Cinema Tickets,45.65,Entertainment,expense,debit_card
+693,2025-10-10,Gaming / Steam,12.83,Entertainment,expense,credit_card
+694,2025-10-10,Gaming / Steam,16.12,Entertainment,expense,upi
+695,2025-10-03,Concert / Events,93.73,Entertainment,expense,bank_transfer
+696,2025-10-23,Concert / Events,107.88,Entertainment,expense,credit_card
+697,2025-10-03,Gym Membership,55.92,Health & Fitness,expense,credit_card
+698,2025-10-03,Pharmacy,31.58,Health & Fitness,expense,upi
+699,2025-10-20,Doctor Visit,120.25,Health & Fitness,expense,credit_card
+700,2025-10-07,Doctor Visit,105.12,Health & Fitness,expense,debit_card
+701,2025-10-06,Health Insurance,139.49,Health & Fitness,expense,debit_card
+702,2025-10-16,Amazon Purchase,84.84,Shopping,expense,credit_card
+703,2025-10-05,Clothing Store,111.37,Shopping,expense,upi
+704,2025-10-27,Clothing Store,67.01,Shopping,expense,bank_transfer
+705,2025-10-26,Electronics,290.81,Shopping,expense,credit_card
+706,2025-10-23,Electronics,375.8,Shopping,expense,debit_card
+707,2025-10-21,Home Goods,39.17,Shopping,expense,credit_card
+708,2025-10-13,Books / Stationery,22.45,Shopping,expense,credit_card
+709,2025-10-02,Books / Stationery,25.96,Shopping,expense,upi
+710,2025-10-13,Electricity Bill,61.76,Utilities,expense,credit_card
+711,2025-10-12,Internet Bill,55.16,Utilities,expense,bank_transfer
+712,2025-10-09,Water Bill,32.1,Utilities,expense,debit_card
+713,2025-10-12,Mobile Phone Bill,35.35,Utilities,expense,debit_card
+714,2025-11-01,Monthly Salary,4502.95,Income,income,bank_transfer
+715,2025-11-26,Rent Payment,1549.59,Housing,expense,credit_card
+716,2025-11-23,Grocery Store,97.1,Food & Dining,expense,debit_card
+717,2025-11-26,Grocery Store,84.99,Food & Dining,expense,bank_transfer
+718,2025-11-06,Grocery Store,69.22,Food & Dining,expense,credit_card
+719,2025-11-23,Grocery Store,63.17,Food & Dining,expense,credit_card
+720,2025-11-28,Grocery Store,84.47,Food & Dining,expense,bank_transfer
+721,2025-11-10,Restaurant,56.96,Food & Dining,expense,debit_card
+722,2025-11-17,Restaurant,19.89,Food & Dining,expense,credit_card
+723,2025-11-02,Restaurant,69.65,Food & Dining,expense,credit_card
+724,2025-11-18,Coffee Shop,6.14,Food & Dining,expense,credit_card
+725,2025-11-13,Coffee Shop,9.12,Food & Dining,expense,debit_card
+726,2025-11-18,Coffee Shop,8.5,Food & Dining,expense,upi
+727,2025-11-20,Coffee Shop,9.52,Food & Dining,expense,debit_card
+728,2025-11-15,Coffee Shop,11.36,Food & Dining,expense,cash
+729,2025-11-18,Food Delivery,47.57,Food & Dining,expense,credit_card
+730,2025-11-19,Food Delivery,41.05,Food & Dining,expense,credit_card
+731,2025-11-12,Bakery,19.08,Food & Dining,expense,credit_card
+732,2025-11-02,Bakery,20.74,Food & Dining,expense,credit_card
+733,2025-11-23,Fuel / Petrol,49.15,Transport,expense,upi
+734,2025-11-19,Fuel / Petrol,67.42,Transport,expense,credit_card
+735,2025-11-26,Uber / Lyft,32.0,Transport,expense,bank_transfer
+736,2025-11-19,Metro / Bus Pass,53.55,Transport,expense,debit_card
+737,2025-11-09,Car Maintenance,192.06,Transport,expense,credit_card
+738,2025-11-13,Car Maintenance,214.69,Transport,expense,credit_card
+739,2025-11-18,Parking,11.44,Transport,expense,credit_card
+740,2025-11-07,Netflix,16.84,Entertainment,expense,credit_card
+741,2025-11-23,Spotify,9.49,Entertainment,expense,debit_card
+742,2025-11-09,Cinema Tickets,34.31,Entertainment,expense,cash
+743,2025-11-03,Gaming / Steam,31.19,Entertainment,expense,bank_transfer
+744,2025-11-18,Concert / Events,51.27,Entertainment,expense,credit_card
+745,2025-11-28,Concert / Events,50.37,Entertainment,expense,credit_card
+746,2025-11-06,Gym Membership,70.32,Health & Fitness,expense,debit_card
+747,2025-11-06,Pharmacy,32.14,Health & Fitness,expense,credit_card
+748,2025-11-09,Doctor Visit,105.24,Health & Fitness,expense,debit_card
+749,2025-11-21,Health Insurance,183.99,Health & Fitness,expense,debit_card
+750,2025-11-07,Amazon Purchase,106.12,Shopping,expense,bank_transfer
+751,2025-11-28,Amazon Purchase,29.1,Shopping,expense,upi
+752,2025-11-06,Clothing Store,158.07,Shopping,expense,credit_card
+753,2025-11-23,Electronics,290.87,Shopping,expense,debit_card
+754,2025-11-07,Electronics,313.44,Shopping,expense,upi
+755,2025-11-08,Home Goods,89.58,Shopping,expense,debit_card
+756,2025-11-25,Home Goods,91.68,Shopping,expense,debit_card
+757,2025-11-24,Books / Stationery,33.72,Shopping,expense,credit_card
+758,2025-11-18,Electricity Bill,54.79,Utilities,expense,credit_card
+759,2025-11-15,Internet Bill,53.99,Utilities,expense,debit_card
+760,2025-11-02,Water Bill,31.9,Utilities,expense,credit_card
+761,2025-11-07,Mobile Phone Bill,32.6,Utilities,expense,upi
+762,2025-12-01,Monthly Salary,4351.08,Income,income,bank_transfer
+763,2025-12-17,Freelance Income,1164.63,Income,income,bank_transfer
+764,2025-12-09,Rent Payment,1666.28,Housing,expense,credit_card
+765,2025-12-22,Grocery Store,81.03,Food & Dining,expense,credit_card
+766,2025-12-18,Grocery Store,97.53,Food & Dining,expense,credit_card
+767,2025-12-24,Grocery Store,111.9,Food & Dining,expense,credit_card
+768,2025-12-28,Grocery Store,89.76,Food & Dining,expense,upi
+769,2025-12-22,Restaurant,30.68,Food & Dining,expense,credit_card
+770,2025-12-11,Coffee Shop,8.88,Food & Dining,expense,credit_card
+771,2025-12-24,Coffee Shop,11.92,Food & Dining,expense,debit_card
+772,2025-12-09,Coffee Shop,9.08,Food & Dining,expense,cash
+773,2025-12-26,Coffee Shop,11.29,Food & Dining,expense,credit_card
+774,2025-12-04,Coffee Shop,9.15,Food & Dining,expense,upi
+775,2025-12-24,Food Delivery,53.94,Food & Dining,expense,credit_card
+776,2025-12-18,Food Delivery,40.99,Food & Dining,expense,debit_card
+777,2025-12-22,Bakery,10.58,Food & Dining,expense,credit_card
+778,2025-12-23,Bakery,8.45,Food & Dining,expense,debit_card
+779,2025-12-20,Bakery,18.77,Food & Dining,expense,credit_card
+780,2025-12-06,Fuel / Petrol,45.94,Transport,expense,debit_card
+781,2025-12-26,Fuel / Petrol,64.91,Transport,expense,debit_card
+782,2025-12-12,Uber / Lyft,31.95,Transport,expense,bank_transfer
+783,2025-12-10,Metro / Bus Pass,51.54,Transport,expense,credit_card
+784,2025-12-01,Car Maintenance,140.82,Transport,expense,debit_card
+785,2025-12-11,Car Maintenance,187.71,Transport,expense,debit_card
+786,2025-12-05,Parking,17.67,Transport,expense,credit_card
+787,2025-12-08,Netflix,17.36,Entertainment,expense,upi
+788,2025-12-17,Spotify,9.8,Entertainment,expense,credit_card
+789,2025-12-27,Cinema Tickets,35.63,Entertainment,expense,upi
+790,2025-12-28,Gaming / Steam,11.78,Entertainment,expense,debit_card
+791,2025-12-20,Gaming / Steam,34.52,Entertainment,expense,credit_card
+792,2025-12-23,Concert / Events,103.76,Entertainment,expense,bank_transfer
+793,2025-12-12,Gym Membership,60.27,Health & Fitness,expense,bank_transfer
+794,2025-12-26,Pharmacy,30.76,Health & Fitness,expense,credit_card
+795,2025-12-21,Pharmacy,20.08,Health & Fitness,expense,upi
+796,2025-12-12,Doctor Visit,101.7,Health & Fitness,expense,debit_card
+797,2025-12-10,Doctor Visit,98.25,Health & Fitness,expense,upi
+798,2025-12-20,Health Insurance,132.51,Health & Fitness,expense,bank_transfer
+799,2025-12-17,Amazon Purchase,52.83,Shopping,expense,upi
+800,2025-12-04,Amazon Purchase,107.91,Shopping,expense,debit_card
+801,2025-12-04,Clothing Store,111.77,Shopping,expense,bank_transfer
+802,2025-12-24,Clothing Store,92.66,Shopping,expense,credit_card
+803,2025-12-06,Electronics,156.85,Shopping,expense,debit_card
+804,2025-12-10,Electronics,91.83,Shopping,expense,upi
+805,2025-12-09,Home Goods,72.67,Shopping,expense,debit_card
+806,2025-12-03,Books / Stationery,29.2,Shopping,expense,bank_transfer
+807,2025-12-21,Electricity Bill,82.33,Utilities,expense,credit_card
+808,2025-12-22,Internet Bill,55.87,Utilities,expense,bank_transfer
+809,2025-12-24,Water Bill,23.97,Utilities,expense,credit_card
+810,2025-12-26,Mobile Phone Bill,37.38,Utilities,expense,debit_card
+811,2026-01-01,Monthly Salary,4223.31,Income,income,bank_transfer
+812,2026-01-12,Freelance Income,850.64,Income,income,bank_transfer
+813,2026-01-28,Rent Payment,1677.01,Housing,expense,upi
+814,2026-01-21,Grocery Store,76.77,Food & Dining,expense,upi
+815,2026-01-25,Grocery Store,129.1,Food & Dining,expense,upi
+816,2026-01-12,Grocery Store,121.83,Food & Dining,expense,cash
+817,2026-01-13,Grocery Store,110.15,Food & Dining,expense,credit_card
+818,2026-01-25,Grocery Store,104.86,Food & Dining,expense,debit_card
+819,2026-01-07,Restaurant,49.51,Food & Dining,expense,upi
+820,2026-01-06,Restaurant,67.87,Food & Dining,expense,debit_card
+821,2026-01-04,Restaurant,42.69,Food & Dining,expense,bank_transfer
+822,2026-01-28,Coffee Shop,5.51,Food & Dining,expense,cash
+823,2026-01-25,Coffee Shop,10.71,Food & Dining,expense,upi
+824,2026-01-11,Food Delivery,60.95,Food & Dining,expense,credit_card
+825,2026-01-22,Food Delivery,58.01,Food & Dining,expense,cash
+826,2026-01-12,Food Delivery,49.1,Food & Dining,expense,credit_card
+827,2026-01-19,Food Delivery,25.38,Food & Dining,expense,debit_card
+828,2026-01-03,Bakery,17.36,Food & Dining,expense,bank_transfer
+829,2026-01-17,Bakery,15.31,Food & Dining,expense,upi
+830,2026-01-28,Fuel / Petrol,69.0,Transport,expense,credit_card
+831,2026-01-26,Fuel / Petrol,45.66,Transport,expense,credit_card
+832,2026-01-10,Uber / Lyft,28.06,Transport,expense,debit_card
+833,2026-01-27,Uber / Lyft,33.13,Transport,expense,credit_card
+834,2026-01-10,Metro / Bus Pass,31.52,Transport,expense,bank_transfer
+835,2026-01-28,Car Maintenance,304.75,Transport,expense,bank_transfer
+836,2026-01-22,Car Maintenance,106.44,Transport,expense,bank_transfer
+837,2026-01-12,Parking,13.26,Transport,expense,bank_transfer
+838,2026-01-28,Parking,18.57,Transport,expense,bank_transfer
+839,2026-01-02,Netflix,14.86,Entertainment,expense,credit_card
+840,2026-01-28,Spotify,9.16,Entertainment,expense,bank_transfer
+841,2026-01-14,Cinema Tickets,46.05,Entertainment,expense,credit_card
+842,2026-01-27,Cinema Tickets,36.91,Entertainment,expense,credit_card
+843,2026-01-23,Gaming / Steam,17.54,Entertainment,expense,debit_card
+844,2026-01-26,Gaming / Steam,52.08,Entertainment,expense,debit_card
+845,2026-01-16,Concert / Events,59.85,Entertainment,expense,credit_card
+846,2026-01-13,Concert / Events,104.36,Entertainment,expense,credit_card
+847,2026-01-23,Gym Membership,64.81,Health & Fitness,expense,credit_card
+848,2026-01-04,Pharmacy,36.6,Health & Fitness,expense,bank_transfer
+849,2026-01-01,Pharmacy,26.69,Health & Fitness,expense,credit_card
+850,2026-01-11,Doctor Visit,99.48,Health & Fitness,expense,debit_card
+851,2026-01-21,Health Insurance,134.78,Health & Fitness,expense,debit_card
+852,2026-01-14,Amazon Purchase,61.37,Shopping,expense,credit_card
+853,2026-01-25,Clothing Store,124.21,Shopping,expense,debit_card
+854,2026-01-27,Electronics,328.23,Shopping,expense,credit_card
+855,2026-01-09,Home Goods,59.17,Shopping,expense,bank_transfer
+856,2026-01-01,Books / Stationery,16.02,Shopping,expense,bank_transfer
+857,2026-01-22,Books / Stationery,10.96,Shopping,expense,cash
+858,2026-01-16,Electricity Bill,57.41,Utilities,expense,bank_transfer
+859,2026-01-11,Internet Bill,39.4,Utilities,expense,credit_card
+860,2026-01-04,Water Bill,25.34,Utilities,expense,credit_card
+861,2026-01-06,Mobile Phone Bill,56.0,Utilities,expense,upi
+862,2026-02-01,Monthly Salary,4408.18,Income,income,bank_transfer
+863,2026-02-24,Freelance Income,423.72,Income,income,bank_transfer
+864,2026-02-06,Rent Payment,1514.54,Housing,expense,credit_card
+865,2026-02-01,Grocery Store,85.97,Food & Dining,expense,upi
+866,2026-02-20,Grocery Store,127.8,Food & Dining,expense,debit_card
+867,2026-02-21,Grocery Store,70.25,Food & Dining,expense,bank_transfer
+868,2026-02-25,Restaurant,38.07,Food & Dining,expense,cash
+869,2026-02-02,Coffee Shop,8.08,Food & Dining,expense,upi
+870,2026-02-22,Coffee Shop,10.35,Food & Dining,expense,bank_transfer
+871,2026-02-28,Food Delivery,56.71,Food & Dining,expense,credit_card
+872,2026-02-13,Food Delivery,57.96,Food & Dining,expense,upi
+873,2026-02-02,Food Delivery,27.32,Food & Dining,expense,debit_card
+874,2026-02-11,Food Delivery,23.08,Food & Dining,expense,bank_transfer
+875,2026-02-12,Bakery,15.84,Food & Dining,expense,credit_card
+876,2026-02-01,Fuel / Petrol,49.29,Transport,expense,upi
+877,2026-02-02,Uber / Lyft,28.39,Transport,expense,debit_card
+878,2026-02-17,Metro / Bus Pass,28.79,Transport,expense,cash
+879,2026-02-07,Car Maintenance,138.66,Transport,expense,bank_transfer
+880,2026-02-22,Parking,13.25,Transport,expense,debit_card
+881,2026-02-03,Parking,8.34,Transport,expense,credit_card
+882,2026-02-18,Netflix,14.64,Entertainment,expense,upi
+883,2026-02-18,Spotify,9.82,Entertainment,expense,debit_card
+884,2026-02-11,Cinema Tickets,32.32,Entertainment,expense,upi
+885,2026-02-07,Cinema Tickets,23.92,Entertainment,expense,upi
+886,2026-02-14,Gaming / Steam,49.85,Entertainment,expense,credit_card
+887,2026-02-20,Gaming / Steam,61.58,Entertainment,expense,credit_card
+888,2026-02-15,Concert / Events,102.87,Entertainment,expense,credit_card
+889,2026-02-03,Concert / Events,100.7,Entertainment,expense,bank_transfer
+890,2026-02-14,Gym Membership,56.57,Health & Fitness,expense,credit_card
+891,2026-02-20,Pharmacy,21.87,Health & Fitness,expense,bank_transfer
+892,2026-02-25,Doctor Visit,142.54,Health & Fitness,expense,cash
+893,2026-02-15,Doctor Visit,64.21,Health & Fitness,expense,bank_transfer
+894,2026-02-28,Health Insurance,158.62,Health & Fitness,expense,upi
+895,2026-02-02,Amazon Purchase,42.55,Shopping,expense,bank_transfer
+896,2026-02-02,Amazon Purchase,34.35,Shopping,expense,debit_card
+897,2026-02-10,Clothing Store,48.08,Shopping,expense,bank_transfer
+898,2026-02-02,Clothing Store,139.74,Shopping,expense,bank_transfer
+899,2026-02-03,Electronics,220.83,Shopping,expense,cash
+900,2026-02-03,Home Goods,59.29,Shopping,expense,credit_card
+901,2026-02-23,Books / Stationery,36.2,Shopping,expense,bank_transfer
+902,2026-02-08,Electricity Bill,56.48,Utilities,expense,debit_card
+903,2026-02-10,Internet Bill,38.41,Utilities,expense,debit_card
+904,2026-02-09,Water Bill,31.04,Utilities,expense,bank_transfer
+905,2026-02-08,Mobile Phone Bill,32.61,Utilities,expense,bank_transfer
+906,2026-03-01,Monthly Salary,4874.45,Income,income,bank_transfer
+907,2026-03-14,Freelance Income,665.35,Income,income,bank_transfer
+908,2026-03-23,Rent Payment,1457.45,Housing,expense,credit_card
+909,2026-03-01,Grocery Store,69.47,Food & Dining,expense,debit_card
+910,2026-03-26,Grocery Store,84.79,Food & Dining,expense,credit_card
+911,2026-03-21,Grocery Store,85.38,Food & Dining,expense,upi
+912,2026-03-10,Restaurant,43.13,Food & Dining,expense,upi
+913,2026-03-28,Coffee Shop,12.67,Food & Dining,expense,credit_card
+914,2026-03-24,Coffee Shop,10.36,Food & Dining,expense,debit_card
+915,2026-03-26,Food Delivery,45.57,Food & Dining,expense,credit_card
+916,2026-03-06,Food Delivery,36.05,Food & Dining,expense,credit_card
+917,2026-03-14,Food Delivery,41.26,Food & Dining,expense,bank_transfer
+918,2026-03-03,Food Delivery,60.93,Food & Dining,expense,upi
+919,2026-03-18,Bakery,14.33,Food & Dining,expense,debit_card
+920,2026-03-16,Bakery,17.41,Food & Dining,expense,credit_card
+921,2026-03-23,Bakery,14.54,Food & Dining,expense,upi
+922,2026-03-15,Fuel / Petrol,54.0,Transport,expense,credit_card
+923,2026-03-27,Uber / Lyft,11.41,Transport,expense,credit_card
+924,2026-03-22,Metro / Bus Pass,57.39,Transport,expense,credit_card
+925,2026-03-11,Car Maintenance,136.91,Transport,expense,credit_card
+926,2026-03-19,Parking,18.8,Transport,expense,credit_card
+927,2026-03-27,Parking,18.27,Transport,expense,debit_card
+928,2026-03-19,Netflix,14.82,Entertainment,expense,debit_card
+929,2026-03-17,Spotify,10.66,Entertainment,expense,debit_card
+930,2026-03-05,Cinema Tickets,25.29,Entertainment,expense,credit_card
+931,2026-03-25,Gaming / Steam,34.23,Entertainment,expense,bank_transfer
+932,2026-03-12,Concert / Events,119.31,Entertainment,expense,upi
+933,2026-03-22,Concert / Events,101.53,Entertainment,expense,debit_card
+934,2026-03-12,Gym Membership,59.98,Health & Fitness,expense,credit_card
+935,2026-03-23,Pharmacy,45.93,Health & Fitness,expense,cash
+936,2026-03-27,Pharmacy,30.16,Health & Fitness,expense,debit_card
+937,2026-03-27,Doctor Visit,102.16,Health & Fitness,expense,upi
+938,2026-03-21,Doctor Visit,118.14,Health & Fitness,expense,debit_card
+939,2026-03-27,Health Insurance,207.83,Health & Fitness,expense,credit_card
+940,2026-03-05,Amazon Purchase,48.83,Shopping,expense,credit_card
+941,2026-03-13,Clothing Store,50.4,Shopping,expense,debit_card
+942,2026-03-08,Clothing Store,114.41,Shopping,expense,credit_card
+943,2026-03-13,Electronics,265.73,Shopping,expense,debit_card
+944,2026-03-21,Home Goods,46.05,Shopping,expense,bank_transfer
+945,2026-03-17,Home Goods,79.75,Shopping,expense,debit_card
+946,2026-03-20,Books / Stationery,41.72,Shopping,expense,bank_transfer
+947,2026-03-20,Books / Stationery,15.96,Shopping,expense,credit_card
+948,2026-03-07,Electricity Bill,95.79,Utilities,expense,bank_transfer
+949,2026-03-04,Internet Bill,64.89,Utilities,expense,debit_card
+950,2026-03-23,Water Bill,24.97,Utilities,expense,debit_card
+951,2026-03-12,Mobile Phone Bill,35.28,Utilities,expense,bank_transfer
+952,2026-04-01,Monthly Salary,4426.57,Income,income,bank_transfer
+953,2026-04-10,Rent Payment,1501.57,Housing,expense,bank_transfer
+954,2026-04-07,Grocery Store,110.15,Food & Dining,expense,credit_card
+955,2026-04-25,Grocery Store,107.96,Food & Dining,expense,debit_card
+956,2026-04-16,Grocery Store,112.46,Food & Dining,expense,credit_card
+957,2026-04-01,Restaurant,32.86,Food & Dining,expense,credit_card
+958,2026-04-05,Coffee Shop,7.09,Food & Dining,expense,bank_transfer
+959,2026-04-22,Coffee Shop,5.72,Food & Dining,expense,debit_card
+960,2026-04-17,Coffee Shop,9.05,Food & Dining,expense,credit_card
+961,2026-04-14,Coffee Shop,14.03,Food & Dining,expense,debit_card
+962,2026-04-22,Food Delivery,53.64,Food & Dining,expense,debit_card
+963,2026-04-17,Bakery,9.29,Food & Dining,expense,credit_card
+964,2026-04-02,Bakery,16.92,Food & Dining,expense,debit_card
+965,2026-04-18,Bakery,11.82,Food & Dining,expense,upi
+966,2026-04-05,Bakery,13.24,Food & Dining,expense,debit_card
+967,2026-04-15,Fuel / Petrol,76.92,Transport,expense,credit_card
+968,2026-04-17,Fuel / Petrol,69.82,Transport,expense,bank_transfer
+969,2026-04-11,Uber / Lyft,31.57,Transport,expense,bank_transfer
+970,2026-04-18,Uber / Lyft,12.7,Transport,expense,credit_card
+971,2026-04-10,Metro / Bus Pass,34.83,Transport,expense,bank_transfer
+972,2026-04-26,Car Maintenance,102.38,Transport,expense,upi
+973,2026-04-15,Car Maintenance,107.96,Transport,expense,credit_card
+974,2026-04-04,Parking,7.2,Transport,expense,debit_card
+975,2026-04-14,Parking,14.89,Transport,expense,debit_card
+976,2026-04-26,Netflix,16.67,Entertainment,expense,debit_card
+977,2026-04-25,Spotify,10.99,Entertainment,expense,debit_card
+978,2026-04-08,Cinema Tickets,47.87,Entertainment,expense,credit_card
+979,2026-04-23,Cinema Tickets,40.41,Entertainment,expense,debit_card
+980,2026-04-03,Gaming / Steam,20.66,Entertainment,expense,credit_card
+981,2026-04-08,Gaming / Steam,50.11,Entertainment,expense,upi
+982,2026-04-13,Concert / Events,151.82,Entertainment,expense,debit_card
+983,2026-04-24,Gym Membership,57.0,Health & Fitness,expense,bank_transfer
+984,2026-04-03,Pharmacy,15.44,Health & Fitness,expense,upi
+985,2026-04-10,Doctor Visit,108.44,Health & Fitness,expense,credit_card
+986,2026-04-01,Doctor Visit,138.02,Health & Fitness,expense,upi
+987,2026-04-23,Health Insurance,134.3,Health & Fitness,expense,credit_card
+988,2026-04-26,Amazon Purchase,99.7,Shopping,expense,debit_card
+989,2026-04-05,Amazon Purchase,66.37,Shopping,expense,debit_card
+990,2026-04-13,Clothing Store,75.77,Shopping,expense,bank_transfer
+991,2026-04-03,Clothing Store,59.51,Shopping,expense,debit_card
+992,2026-04-08,Electronics,264.1,Shopping,expense,upi
+993,2026-04-13,Electronics,161.9,Shopping,expense,bank_transfer
+994,2026-04-25,Home Goods,45.12,Shopping,expense,bank_transfer
+995,2026-04-17,Books / Stationery,39.62,Shopping,expense,cash
+996,2026-04-03,Books / Stationery,28.06,Shopping,expense,credit_card
+997,2026-04-03,Electricity Bill,78.27,Utilities,expense,bank_transfer
+998,2026-04-26,Internet Bill,65.3,Utilities,expense,upi
+999,2026-04-02,Water Bill,29.12,Utilities,expense,bank_transfer
+1000,2026-04-06,Mobile Phone Bill,24.96,Utilities,expense,upi
+1001,2026-05-01,Monthly Salary,4839.35,Income,income,bank_transfer
+1002,2026-05-12,Rent Payment,1606.96,Housing,expense,upi
+1003,2026-05-12,Grocery Store,96.35,Food & Dining,expense,debit_card
+1004,2026-05-21,Grocery Store,108.5,Food & Dining,expense,upi
+1005,2026-05-10,Restaurant,21.68,Food & Dining,expense,debit_card
+1006,2026-05-11,Coffee Shop,10.71,Food & Dining,expense,bank_transfer
+1007,2026-05-13,Food Delivery,47.92,Food & Dining,expense,credit_card
+1008,2026-05-08,Food Delivery,32.48,Food & Dining,expense,upi
+1009,2026-05-09,Food Delivery,57.85,Food & Dining,expense,bank_transfer
+1010,2026-05-27,Bakery,10.69,Food & Dining,expense,debit_card
+1011,2026-05-23,Bakery,12.32,Food & Dining,expense,credit_card
+1012,2026-05-28,Bakery,9.52,Food & Dining,expense,upi
+1013,2026-05-13,Fuel / Petrol,41.34,Transport,expense,bank_transfer
+1014,2026-05-17,Fuel / Petrol,49.42,Transport,expense,bank_transfer
+1015,2026-05-21,Uber / Lyft,18.23,Transport,expense,credit_card
+1016,2026-05-21,Metro / Bus Pass,37.19,Transport,expense,upi
+1017,2026-05-23,Car Maintenance,100.46,Transport,expense,credit_card
+1018,2026-05-28,Parking,24.78,Transport,expense,upi
+1019,2026-05-02,Netflix,16.59,Entertainment,expense,debit_card
+1020,2026-05-07,Spotify,9.24,Entertainment,expense,bank_transfer
+1021,2026-05-05,Cinema Tickets,39.07,Entertainment,expense,credit_card
+1022,2026-05-19,Cinema Tickets,21.66,Entertainment,expense,credit_card
+1023,2026-05-16,Gaming / Steam,39.24,Entertainment,expense,debit_card
+1024,2026-05-20,Concert / Events,129.3,Entertainment,expense,bank_transfer
+1025,2026-05-21,Gym Membership,42.04,Health & Fitness,expense,bank_transfer
+1026,2026-05-01,Pharmacy,39.58,Health & Fitness,expense,upi
+1027,2026-05-18,Pharmacy,43.89,Health & Fitness,expense,debit_card
+1028,2026-05-07,Doctor Visit,95.34,Health & Fitness,expense,bank_transfer
+1029,2026-05-17,Health Insurance,199.42,Health & Fitness,expense,debit_card
+1030,2026-05-23,Amazon Purchase,104.91,Shopping,expense,debit_card
+1031,2026-05-25,Clothing Store,148.17,Shopping,expense,debit_card
+1032,2026-05-14,Clothing Store,116.07,Shopping,expense,debit_card
+1033,2026-05-02,Electronics,192.55,Shopping,expense,credit_card
+1034,2026-05-06,Electronics,142.17,Shopping,expense,upi
+1035,2026-05-21,Home Goods,95.36,Shopping,expense,bank_transfer
+1036,2026-05-23,Home Goods,39.85,Shopping,expense,bank_transfer
+1037,2026-05-05,Books / Stationery,30.42,Shopping,expense,debit_card
+1038,2026-05-09,Electricity Bill,97.74,Utilities,expense,cash
+1039,2026-05-21,Internet Bill,69.36,Utilities,expense,credit_card
+1040,2026-05-10,Water Bill,28.73,Utilities,expense,debit_card
+1041,2026-05-28,Mobile Phone Bill,44.37,Utilities,expense,upi
+1042,2026-06-01,Monthly Salary,4859.87,Income,income,bank_transfer
+1043,2026-06-13,Freelance Income,905.82,Income,income,bank_transfer
+1044,2026-06-12,Rent Payment,1451.98,Housing,expense,bank_transfer
+1045,2026-06-04,Grocery Store,85.41,Food & Dining,expense,credit_card
+1046,2026-06-18,Grocery Store,113.96,Food & Dining,expense,upi
+1047,2026-06-11,Grocery Store,123.74,Food & Dining,expense,credit_card
+1048,2026-06-27,Grocery Store,92.81,Food & Dining,expense,credit_card
+1049,2026-06-09,Restaurant,69.82,Food & Dining,expense,credit_card
+1050,2026-06-03,Restaurant,46.76,Food & Dining,expense,credit_card
+1051,2026-06-19,Coffee Shop,9.16,Food & Dining,expense,debit_card
+1052,2026-06-10,Coffee Shop,14.23,Food & Dining,expense,credit_card
+1053,2026-06-22,Coffee Shop,9.01,Food & Dining,expense,credit_card
+1054,2026-06-20,Coffee Shop,10.9,Food & Dining,expense,upi
+1055,2026-06-02,Food Delivery,37.73,Food & Dining,expense,debit_card
+1056,2026-06-06,Food Delivery,30.45,Food & Dining,expense,credit_card
+1057,2026-06-27,Food Delivery,33.4,Food & Dining,expense,upi
+1058,2026-06-17,Bakery,8.83,Food & Dining,expense,credit_card
+1059,2026-06-25,Bakery,11.43,Food & Dining,expense,debit_card
+1060,2026-06-20,Bakery,17.14,Food & Dining,expense,bank_transfer
+1061,2026-06-26,Bakery,11.31,Food & Dining,expense,bank_transfer
+1062,2026-06-22,Fuel / Petrol,63.84,Transport,expense,debit_card
+1063,2026-06-16,Fuel / Petrol,70.97,Transport,expense,credit_card
+1064,2026-06-17,Uber / Lyft,28.86,Transport,expense,cash
+1065,2026-06-14,Uber / Lyft,20.68,Transport,expense,debit_card
+1066,2026-06-17,Metro / Bus Pass,51.74,Transport,expense,debit_card
+1067,2026-06-21,Car Maintenance,313.47,Transport,expense,bank_transfer
+1068,2026-06-20,Car Maintenance,124.85,Transport,expense,bank_transfer
+1069,2026-06-15,Parking,13.66,Transport,expense,upi
+1070,2026-06-01,Netflix,15.02,Entertainment,expense,debit_card
+1071,2026-06-11,Spotify,9.1,Entertainment,expense,credit_card
+1072,2026-06-27,Cinema Tickets,25.52,Entertainment,expense,credit_card
+1073,2026-06-10,Gaming / Steam,55.28,Entertainment,expense,upi
+1074,2026-06-16,Concert / Events,133.86,Entertainment,expense,bank_transfer
+1075,2026-06-10,Gym Membership,69.07,Health & Fitness,expense,bank_transfer
+1076,2026-06-17,Pharmacy,36.17,Health & Fitness,expense,debit_card
+1077,2026-06-05,Pharmacy,37.13,Health & Fitness,expense,debit_card
+1078,2026-06-11,Doctor Visit,119.06,Health & Fitness,expense,bank_transfer
+1079,2026-06-05,Health Insurance,205.09,Health & Fitness,expense,debit_card
+1080,2026-06-15,Amazon Purchase,33.77,Shopping,expense,bank_transfer
+1081,2026-06-18,Clothing Store,86.61,Shopping,expense,credit_card
+1082,2026-06-27,Clothing Store,42.53,Shopping,expense,credit_card
+1083,2026-06-17,Electronics,286.63,Shopping,expense,debit_card
+1084,2026-06-24,Home Goods,56.43,Shopping,expense,credit_card
+1085,2026-06-10,Books / Stationery,33.72,Shopping,expense,debit_card
+1086,2026-06-09,Electricity Bill,89.44,Utilities,expense,credit_card
+1087,2026-06-23,Internet Bill,71.66,Utilities,expense,upi
+1088,2026-06-26,Water Bill,30.12,Utilities,expense,bank_transfer
+1089,2026-06-04,Mobile Phone Bill,26.86,Utilities,expense,debit_card
+1090,2026-07-01,Monthly Salary,4620.57,Income,income,bank_transfer
+1091,2026-07-14,Rent Payment,1356.86,Housing,expense,bank_transfer
+1092,2026-07-14,Grocery Store,74.0,Food & Dining,expense,credit_card
+1093,2026-07-26,Grocery Store,79.93,Food & Dining,expense,bank_transfer
+1094,2026-07-25,Grocery Store,94.23,Food & Dining,expense,credit_card
+1095,2026-07-15,Restaurant,45.75,Food & Dining,expense,credit_card
+1096,2026-07-23,Restaurant,45.85,Food & Dining,expense,cash
+1097,2026-07-22,Restaurant,46.35,Food & Dining,expense,bank_transfer
+1098,2026-07-23,Coffee Shop,13.16,Food & Dining,expense,bank_transfer
+1099,2026-07-03,Coffee Shop,9.96,Food & Dining,expense,credit_card
+1100,2026-07-04,Coffee Shop,6.82,Food & Dining,expense,bank_transfer
+1101,2026-07-09,Coffee Shop,11.83,Food & Dining,expense,upi
+1102,2026-07-15,Coffee Shop,13.47,Food & Dining,expense,credit_card
+1103,2026-07-01,Food Delivery,42.15,Food & Dining,expense,credit_card
+1104,2026-07-11,Food Delivery,30.5,Food & Dining,expense,upi
+1105,2026-07-03,Food Delivery,47.47,Food & Dining,expense,credit_card
+1106,2026-07-12,Food Delivery,32.04,Food & Dining,expense,debit_card
+1107,2026-07-13,Food Delivery,61.1,Food & Dining,expense,credit_card
+1108,2026-07-11,Bakery,13.01,Food & Dining,expense,upi
+1109,2026-07-02,Bakery,16.64,Food & Dining,expense,upi
+1110,2026-07-01,Bakery,10.41,Food & Dining,expense,cash
+1111,2026-07-16,Bakery,17.73,Food & Dining,expense,debit_card
+1112,2026-07-14,Bakery,13.77,Food & Dining,expense,bank_transfer
+1113,2026-07-14,Fuel / Petrol,65.9,Transport,expense,upi
+1114,2026-07-27,Uber / Lyft,28.2,Transport,expense,debit_card
+1115,2026-07-18,Uber / Lyft,29.0,Transport,expense,bank_transfer
+1116,2026-07-02,Metro / Bus Pass,36.83,Transport,expense,upi
+1117,2026-07-23,Car Maintenance,212.0,Transport,expense,upi
+1118,2026-07-18,Car Maintenance,193.86,Transport,expense,upi
+1119,2026-07-24,Parking,21.26,Transport,expense,debit_card
+1120,2026-07-23,Netflix,17.42,Entertainment,expense,credit_card
+1121,2026-07-25,Spotify,9.02,Entertainment,expense,credit_card
+1122,2026-07-07,Cinema Tickets,28.45,Entertainment,expense,credit_card
+1123,2026-07-23,Gaming / Steam,46.04,Entertainment,expense,debit_card
+1124,2026-07-28,Gaming / Steam,48.59,Entertainment,expense,credit_card
+1125,2026-07-24,Concert / Events,91.8,Entertainment,expense,bank_transfer
+1126,2026-07-24,Concert / Events,64.77,Entertainment,expense,credit_card
+1127,2026-07-15,Gym Membership,52.48,Health & Fitness,expense,bank_transfer
+1128,2026-07-27,Pharmacy,32.89,Health & Fitness,expense,upi
+1129,2026-07-19,Pharmacy,44.58,Health & Fitness,expense,credit_card
+1130,2026-07-05,Doctor Visit,64.5,Health & Fitness,expense,debit_card
+1131,2026-07-10,Doctor Visit,95.52,Health & Fitness,expense,bank_transfer
+1132,2026-07-04,Health Insurance,136.37,Health & Fitness,expense,cash
+1133,2026-07-22,Amazon Purchase,99.83,Shopping,expense,debit_card
+1134,2026-07-24,Clothing Store,118.33,Shopping,expense,debit_card
+1135,2026-07-18,Electronics,287.04,Shopping,expense,debit_card
+1136,2026-07-26,Home Goods,91.02,Shopping,expense,debit_card
+1137,2026-07-16,Home Goods,67.44,Shopping,expense,credit_card
+1138,2026-07-27,Books / Stationery,16.89,Shopping,expense,upi
+1139,2026-07-16,Books / Stationery,14.2,Shopping,expense,credit_card
+1140,2026-07-19,Electricity Bill,87.89,Utilities,expense,bank_transfer
+1141,2026-07-13,Internet Bill,53.66,Utilities,expense,credit_card
+1142,2026-07-16,Water Bill,35.61,Utilities,expense,bank_transfer
+1143,2026-07-23,Mobile Phone Bill,34.01,Utilities,expense,credit_card
+1144,2026-08-01,Monthly Salary,4825.37,Income,income,bank_transfer
+1145,2026-08-01,Rent Payment,1397.72,Housing,expense,credit_card
+1146,2026-08-14,Grocery Store,80.35,Food & Dining,expense,credit_card
+1147,2026-08-08,Grocery Store,121.66,Food & Dining,expense,debit_card
+1148,2026-08-02,Grocery Store,107.21,Food & Dining,expense,debit_card
+1149,2026-08-28,Grocery Store,89.02,Food & Dining,expense,bank_transfer
+1150,2026-08-17,Grocery Store,64.87,Food & Dining,expense,credit_card
+1151,2026-08-22,Restaurant,65.35,Food & Dining,expense,bank_transfer
+1152,2026-08-21,Restaurant,52.44,Food & Dining,expense,debit_card
+1153,2026-08-22,Coffee Shop,4.87,Food & Dining,expense,upi
+1154,2026-08-14,Food Delivery,35.33,Food & Dining,expense,credit_card
+1155,2026-08-27,Bakery,10.38,Food & Dining,expense,credit_card
+1156,2026-08-06,Bakery,18.69,Food & Dining,expense,credit_card
+1157,2026-08-28,Bakery,9.67,Food & Dining,expense,credit_card
+1158,2026-08-03,Bakery,16.37,Food & Dining,expense,credit_card
+1159,2026-08-06,Fuel / Petrol,50.73,Transport,expense,bank_transfer
+1160,2026-08-22,Uber / Lyft,17.26,Transport,expense,credit_card
+1161,2026-08-27,Metro / Bus Pass,49.59,Transport,expense,debit_card
+1162,2026-08-08,Car Maintenance,133.37,Transport,expense,credit_card
+1163,2026-08-26,Parking,8.08,Transport,expense,upi
+1164,2026-08-03,Netflix,15.65,Entertainment,expense,credit_card
+1165,2026-08-28,Spotify,10.19,Entertainment,expense,debit_card
+1166,2026-08-01,Cinema Tickets,44.24,Entertainment,expense,credit_card
+1167,2026-08-22,Gaming / Steam,33.7,Entertainment,expense,bank_transfer
+1168,2026-08-22,Gaming / Steam,54.26,Entertainment,expense,debit_card
+1169,2026-08-21,Concert / Events,152.94,Entertainment,expense,credit_card
+1170,2026-08-21,Concert / Events,54.9,Entertainment,expense,credit_card
+1171,2026-08-19,Gym Membership,62.72,Health & Fitness,expense,debit_card
+1172,2026-08-22,Pharmacy,30.34,Health & Fitness,expense,credit_card
+1173,2026-08-07,Doctor Visit,49.56,Health & Fitness,expense,bank_transfer
+1174,2026-08-02,Health Insurance,192.18,Health & Fitness,expense,credit_card
+1175,2026-08-10,Amazon Purchase,28.77,Shopping,expense,bank_transfer
+1176,2026-08-05,Amazon Purchase,111.02,Shopping,expense,upi
+1177,2026-08-05,Clothing Store,59.61,Shopping,expense,bank_transfer
+1178,2026-08-18,Clothing Store,30.38,Shopping,expense,credit_card
+1179,2026-08-25,Electronics,278.56,Shopping,expense,debit_card
+1180,2026-08-21,Home Goods,63.71,Shopping,expense,bank_transfer
+1181,2026-08-11,Books / Stationery,12.69,Shopping,expense,debit_card
+1182,2026-08-20,Electricity Bill,73.85,Utilities,expense,bank_transfer
+1183,2026-08-27,Internet Bill,65.42,Utilities,expense,credit_card
+1184,2026-08-26,Water Bill,39.32,Utilities,expense,cash
+1185,2026-08-23,Mobile Phone Bill,49.41,Utilities,expense,credit_card
